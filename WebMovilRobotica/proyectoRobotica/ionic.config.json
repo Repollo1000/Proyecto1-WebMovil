@@ -1,0 +1,7 @@
+{
+  "name": "proyectoRobotica",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

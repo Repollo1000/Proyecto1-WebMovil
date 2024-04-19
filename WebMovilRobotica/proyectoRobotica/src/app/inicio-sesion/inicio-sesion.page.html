@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>inicio-sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">inicioSesion</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <img id="logo" src="assets\imagenes\logo.png" alt="Descripción de la imagen">
+
+  <h1>Iniciar sesión</h1>
+  <div id="form">
+    <ion-list>
+
+        <ion-item>
+          <ion-input  placeholder="Nombre de usuario"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-input placeholder="Contraseña"></ion-input>
+        </ion-item>
+      
+      </ion-list>
+  </div>
+ 
+  <div id="container">
+    <button [routerLink]="['/info']" class="btn">Iniciar sesión</button>
+  
+  </div>  
+
+</ion-content>

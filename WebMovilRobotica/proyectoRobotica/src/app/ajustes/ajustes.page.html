@@ -1,0 +1,63 @@
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <h1>Editar Perfil</h1>
+  </ion-header>
+
+
+
+  <div id="perfil">
+
+    <img src="assets\imagenes\perfil_online.png" alt="Descripción de la imagen">
+    <p>Versa<br/>Online</p>
+
+  </div>
+
+  <div id="ajustes">
+
+    <p id="Usuario">
+      Usuario <br/> <br/>versa112
+    </p>
+
+   
+    <p id="nombre">
+       Nombre <br/> <br/>Versa
+    </p>
+
+    <p id="apellido">
+      apellido <br/> <br/> Watson
+    </p>
+
+    <p id="fecha">
+      Fecha de nacimiento <br/> <br/>14-09-1989
+    </p>
+
+  </div>
+
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <img src="assets\icon\Vector.png" alt="Descripción de la imagen">
+      </ion-tab-button>
+      <ion-tab-button tab="radio">
+        <img src="assets\icon\android.png" alt="Descripción de la imagen">
+      </ion-tab-button>
+      <ion-tab-button tab="library">
+        <img src="assets\icon\pelota.png" alt="Descripción de la imagen">
+      </ion-tab-button >
+      <ion-tab-button tab="search">
+        <img src="assets\icon\info.png" alt="Descripción de la imagen">
+      </ion-tab-button>
+      
+      <ion-tab-button tab="info">
+        <button [routerLink]="['/ajustes']" class="btn">
+          <img src="assets\icon\confi.png" alt="Descripción de la imagen">
+        </button>
+      </ion-tab-button>
+        
+      
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

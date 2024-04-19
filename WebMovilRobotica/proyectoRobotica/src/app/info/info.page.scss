@@ -1,0 +1,254 @@
+ion-content {
+  --background: linear-gradient(180deg, rgba(200, 168, 233, 0.2436) 0%, rgba(243, 220, 220, 0.84) 100%);
+}
+
+#encabezado {
+    
+  background-color: #C3C7F3;
+  position: absolute;
+  width: 417px;
+  height: 126px;
+  left: 8px;
+  top: 15px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #C3C7F3;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 90px;
+}
+  
+#encabezado p {
+  
+  flex: 1; 
+  line-height: 1.7;
+  text-align: center ; 
+}
+#fotoPerfil  {
+    display: flex;
+    margin-right: 30px; /* Ajusta el valor según sea necesario para mover la imagen a la izquierda */
+}
+
+#servicios h1{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+
+  position: absolute;
+  width: 189px;
+  height: 26px;
+  left: calc(50% - 189px/2 - 2px);
+  top: 150px;
+
+}
+
+#servicios ion-grid{
+/* Barra de seleccion */
+  display: flex;
+  background-color: #F5BCBA;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 90px;
+  position: absolute;
+  width: 430px;
+  height: 65px;
+  left: 0px;
+  top: 199px;
+
+  border-radius: 90px;
+
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+  
+.btn img {
+    display: flex;
+    width: 24px; /* Tamaño de la imagen */
+    height: 24px; /* Tamaño de la imagen */
+    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+}
+  
+.btn span {
+    display: flex;
+    text-align: center;
+    font-size: 12px; /* Tamaño del texto */
+   
+}
+
+.grid-container {
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+  
+ion-card {
+    /* Categoria 1 */
+    
+      box-sizing: border-box;
+      width: 162px;
+      height: 140px;
+    
+      background: #F3DCDC;
+      border: 1px solid #C8A8E9;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 45px;
+      top: calc(180%);
+    
+}
+  #fotoModulo{
+    position: absolute;
+    width: 90px;
+    height: 85px;
+    left: 31px;
+    top: 6px;
+
+    border-radius: 90px;
+    
+}
+ion-card-content{
+  position: absolute;
+  width: 150px;
+  height: 40px;
+  left: 9px;
+  top: 90px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 650;
+  font-size: 12px;
+  line-height: 20px;
+  /* or 167% */
+  text-align: center;
+  
+  color: #000000;
+}
+#actividades section h2{
+
+  position: absolute;
+  width: 189px;
+  height: 26px;
+  left: 38px;
+  
+  
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  
+  color: #C3C7F3;
+
+  /* Borde para el texto */
+  text-shadow: -1px -1px 0 #000,  
+               1px -1px 0 #000,
+               -1px 1px 0 #000,
+               1px 1px 0 #000;
+}
+#fondo{
+
+  position: absolute;
+  width: 265px;
+  height: 49px;
+  left: 79px;
+  top: 664px;
+  
+
+  background: rgba(195, 199, 243, 1);
+  border-radius: 90px 90px 0px 0px;
+
+
+}
+#actividades p{
+
+  position: absolute;
+  left: 24.49%;
+  right: 17.86%;
+  top: 15.49%;
+  bottom: 55.14%;
+
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 20px;
+  /* or 200% */
+  text-align: center;
+
+  color: #000000;
+
+
+
+}
+section{
+  background: rgba(195, 199, 243,1);
+  border-radius: 10px;
+  position: absolute;
+  width: 390px;
+  height: 130px;
+  left: 19px;
+  top: 713px;
+  
+
+}#p1{
+
+  position: absolute;
+  left: 5.87%;
+  right: 5.87%;
+  top: 8.7%;
+  bottom: 55.8%;
+
+  background: #F5F5F5;
+  border-radius: 90px;
+
+  }
+#p2{
+  position: absolute;
+  left: 5.87%;
+  right: 5.87%;
+  top: 50%;
+  bottom: 14.49%;
+
+  background: #F5F5F5;
+  border-radius: 90px;
+
+  }
+ion-tab-button{
+  background-color: #C8A8E9;
+  
+  
+}
+ion-tab-bar{
+
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 45px 45px 0px 0px;
+
+ 
+  
+}
+  
+
+
+
+
+  
+
+
+
+/* Rectangle 25 */
+
+
+

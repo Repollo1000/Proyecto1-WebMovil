@@ -1,0 +1,59 @@
+ion-content {
+    --background: linear-gradient(180deg, rgba(200, 168, 233, 0.2436) 0%, rgba(243, 220, 220, 0.84) 100%);
+  }
+ion-tab-button{
+    background-color: #C8A8E9;
+    
+    
+}
+ion-tab-bar{
+  
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px 45px 0px 0px;
+  
+    
+}
+ion-header{
+    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: absolute;
+    width: 426.14px;
+    height: 50.64px;
+    
+    top: 10px;
+}
+#perfil img{
+
+    position: absolute;
+    width: 110px;
+    height: 100px;
+    left: 4px;
+    top: 105px;
+
+
+}
+#perfil p{
+
+    position: absolute;
+   
+    width: 52px;
+    height: 50px;
+    left: 130px;
+    top: 120px;
+
+}
+
+#ajustes {
+    /* Test Field */
+    position: absolute;
+    width: 315px;
+    height: 316.47px;
+    left: 58px;
+    top: 250px;
+}
+
+#ajustes p {
+    margin-bottom: 50px; /* Espacio entre párrafos */
+}
