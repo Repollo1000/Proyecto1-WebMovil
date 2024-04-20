@@ -17,8 +17,8 @@ text-align: center;
   }
 
   #container{
-
-
+  
+    
     text-align: center;
     
   }
@@ -51,5 +51,22 @@ text-align: center;
     font-size: 15px;
     margin-top: 30px; /* Ajusta el valor según sea necesario */
   }
+
+  .login-container {
+    width: 90%; /* Ajusta el ancho según tu preferencia */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    max-width: 400px; /* Ajusta el ancho máximo según tu preferencia */
+ 
+    ion-item {
+      margin-bottom: 20px;
+      border-radius: 50px;
+    }
+    ion-button {
+      display: block; /* Hace que el botón ocupe todo el ancho del contenedor */
+      margin: 0 auto; /* Centra el botón horizontalmente */
+      width: 50%;
+    }
+  }
+
 
   

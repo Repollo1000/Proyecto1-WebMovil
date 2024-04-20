@@ -1,15 +1,16 @@
 ion-content {
-  --background: linear-gradient(180deg, rgba(200, 168, 233, 0.2436) 0%, rgba(243, 220, 220, 0.84) 100%);
+  --background: linear-gradient(180deg, rgba(225, 195, 255, 0.926) 0%, rgba(243, 220, 220, 0.84) 100%);
 }
 
 #encabezado {
     
   background-color: #C3C7F3;
   position: absolute;
-  width: 417px;
-  height: 126px;
-  left: 8px;
-  top: 15px;
+  width: 95%;
+  height: auto;
+  left: 15px;
+  right: 15px;
+  position: relative;
   display: flex;
   align-items: center;
   border: 1px solid #C3C7F3;
@@ -22,6 +23,21 @@ ion-content {
   flex: 1; 
   line-height: 1.7;
   text-align: center ; 
+
+  /* Hola! Soy VersaAssist tu asistente */
+
+  /* Title/Medium */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+
+  text-align: center;
+
+  color: #6E23BB;
+
+
 }
 #fotoPerfil  {
     display: flex;
@@ -29,7 +45,7 @@ ion-content {
 }
 
 #servicios h1{
-
+  color: #6E23BB;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,23 +57,33 @@ ion-content {
   width: 189px;
   height: 26px;
   left: calc(50% - 189px/2 - 2px);
-  top: 150px;
+  position: relative;
 
 }
 
 #servicios ion-grid{
 /* Barra de seleccion */
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+
   background-color: #F5BCBA;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 90px;
   position: absolute;
-  width: 430px;
+  width: 95%;
   height: 65px;
   left: 0px;
-  top: 199px;
+  position: relative;
 
-  border-radius: 90px;
+  ion-row {
+    width: 80%; /* Ocupar todo el espacio horizontal */
+  }
+
+  ion-col {
+    flex: 1; /* Hacer que los elementos se expandan para ocupar el espacio disponible */
+    text-align: center; /* Alinear el texto al centro */
+  }
 
 }
 
@@ -68,7 +94,7 @@ ion-content {
   justify-content: center;
   text-align: center;
   padding: 10px;
-  border: none;
+  border: aliceblue;
   background: none;
   cursor: pointer;
 }
@@ -88,10 +114,14 @@ ion-content {
 }
 
 .grid-container {
-    
+    justify-self: center;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     gap: 20px; /* Espacio entre las tarjetas */
+    margin-left: 20%;
+    margin-right: 20%;
+
 }
   
 ion-card {
@@ -105,7 +135,7 @@ ion-card {
       border: 1px solid #C8A8E9;
       box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 45px;
-      top: calc(180%);
+     
     
 }
   #fotoModulo{
@@ -135,6 +165,14 @@ ion-card-content{
   
   color: #000000;
 }
+
+#actividades {
+  position: relative;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 100px;
+}
+
 #actividades section h2{
 
   position: absolute;
@@ -150,6 +188,7 @@ ion-card-content{
   line-height: 32px;
   text-align: center;
   
+  
   color: #C3C7F3;
 
   /* Borde para el texto */
@@ -164,7 +203,7 @@ ion-card-content{
   width: 265px;
   height: 49px;
   left: 79px;
-  top: 664px;
+  position: relative;
   
 
   background: rgba(195, 199, 243, 1);
@@ -172,67 +211,67 @@ ion-card-content{
 
 
 }
+
+
+
 #actividades p{
 
-  position: absolute;
-  left: 24.49%;
-  right: 17.86%;
-  top: 15.49%;
-  bottom: 55.14%;
-
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente el texto */
+  align-items: center; /* Centrar verticalmente el texto */
   font-family: 'Inter';
   font-style: italic;
   font-weight: 300;
   font-size: 10px;
   line-height: 20px;
-  /* or 200% */
   text-align: center;
-
   color: #000000;
+  background: #F5F5F5;
+  border-radius: 90px;
+  margin-top: 5px;
+  padding: 5px 5px; /* Ajustar el relleno según sea necesario */
 
 
 
 }
-section{
+#section2{
   background: rgba(195, 199, 243,1);
   border-radius: 10px;
   position: absolute;
+  padding-block-start: 5%;
   width: 390px;
   height: 130px;
   left: 19px;
-  top: 713px;
+  position: relative;
   
 
-}#p1{
-
-  position: absolute;
-  left: 5.87%;
-  right: 5.87%;
-  top: 8.7%;
-  bottom: 55.8%;
-
-  background: #F5F5F5;
-  border-radius: 90px;
-
-  }
-#p2{
-  position: absolute;
-  left: 5.87%;
-  right: 5.87%;
-  top: 50%;
-  bottom: 14.49%;
-
-  background: #F5F5F5;
-  border-radius: 90px;
-
-  }
-ion-tab-button{
-  background-color: #C8A8E9;
-  
-  
 }
-ion-tab-bar{
 
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ancho completo */
+    height: 100px;
+    color: #fff; /* Color del texto */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 999; /* Asegúrate de que el footer esté en la parte superior */
+  }
+  
+  ion-tab-button {
+    background-color: #C8A8E9; /* Color de fondo de los botones de pestaña */
+  }
+  
+  ion-tab-bar {
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px 45px 0px 0px;
+  }
+  
+ion-tab-bar{
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 45px 45px 0px 0px;
 
@@ -240,6 +279,7 @@ ion-tab-bar{
   
 }
   
+
 
 
 
