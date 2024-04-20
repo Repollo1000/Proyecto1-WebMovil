@@ -3,7 +3,7 @@ ion-content {
 }
 
 #encabezado {
-    
+  margin-top: 15px;
   background-color: #C3C7F3;
   position: absolute;
   width: 95%;
@@ -229,6 +229,8 @@ ion-card-content{
   background: #F5F5F5;
   border-radius: 90px;
   margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 5px 5px; /* Ajustar el relleno según sea necesario */
 
 
@@ -278,6 +280,8 @@ ion-tab-bar{
  
   
 }
+
+
   
 
 
