@@ -39,9 +39,9 @@ footer {
 
 #perfil img {
     position: absolute;
-    width: 20%; /*Arreglar*/
+    width: 100px; /*Arreglar*/
     height: auto; 
-    left: 8%;
+    left: 9.1%;
     top: 13%; 
 }
 #perfil p {
@@ -71,13 +71,12 @@ footer {
       font-size: 14px; // Tamaño de fuente más pequeño
     }
   
-    ion-list {
-      margin-bottom: 10px; // Reducir el margen inferior
+    ion-item{
+      margin-bottom: 10px; /* Reducir el margen inferior */
+      width: 90%; /* Utilizar un ancho más amplio */
+      margin: 0 auto; /* Centrar horizontalmente */
     }
   
-    ion-item {
-      font-size: 14px; // Tamaño de fuente más pequeño
-    }
   }
   
   
@@ -98,7 +97,7 @@ footer {
     color: white;
     padding: 2.5% 5%; 
     font-size: 2vw; 
-    margin-top: 100vh;
+    margin-top: 90vh;
     font-size: 93%;
 
 }
