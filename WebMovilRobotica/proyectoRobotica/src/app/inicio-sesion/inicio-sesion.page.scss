@@ -1,72 +1,73 @@
 
 
-  #logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
-    margin-top: 155px;
-    width: 257px; /* Ajusta el valor según sea necesario */
-    /* o puedes usar height: 100px; si prefieres ajustar la altura */
-  }
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  margin-top: 155px;
+  width: 257px; /* Ajusta el valor según sea necesario */
+  /* o puedes usar height: 100px; si prefieres ajustar la altura */
+}
 
-  h1{
+h1{
 text-align: center;
 
 
-  }
+}
 
-  #container{
+#container{
+
   
-    
-    text-align: center;
-    
-  }
+  text-align: center;
+  
+}
 
-  #form{
+#form{
 /* Inputs */
-    /* Auto layout */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-    gap: 5px;
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 5px;
 
-    width: 375px;
-    height: 109px;
+  width: 375px;
+  height: 109px;
 
 
-    /* Inside auto layout */
-    flex: none;
-    order: 2;
-    flex-grow: 0;
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
 
+}
+.btn {
+  background-color: var(--ion-color-botones);
+  color: white;
+  padding: 20px 30px 20px 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-top: 30px; /* Ajusta el valor según sea necesario */
+}
+
+.login-container {
+  width: 90%; /* Ajusta el ancho según tu preferencia */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  max-width: 400px; /* Ajusta el ancho máximo según tu preferencia */
+
+  ion-item {
+    margin-bottom: 20px;
+    border-radius: 50px;
   }
-  .btn {
-    background-color: var(--ion-color-botones);
+  ion-button {
+    display: block; /* Hace que el botón ocupe todo el ancho del contenedor */
+    margin: 0 auto; /* Centra el botón horizontalmente */
+    width: 50%;
     color: white;
-    padding: 20px 30px 20px 30px;
-    border-radius: 10px;
-    font-size: 15px;
-    margin-top: 30px; /* Ajusta el valor según sea necesario */
+    
   }
+}
 
-  .login-container {
-    width: 90%; /* Ajusta el ancho según tu preferencia */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-    max-width: 400px; /* Ajusta el ancho máximo según tu preferencia */
- 
-    ion-item {
-      margin-bottom: 20px;
-      border-radius: 50px;
-    }
-    ion-button {
-      display: block; /* Hace que el botón ocupe todo el ancho del contenedor */
-      margin: 0 auto; /* Centra el botón horizontalmente */
-      width: 50%;
-      color: white;
-      
-    }
-  }
 
