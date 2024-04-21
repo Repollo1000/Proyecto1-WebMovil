@@ -1,5 +1,3 @@
-
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <h1>Editar Perfil</h1>
@@ -15,49 +13,116 @@
   </div>
 
   <div id="ajustes">
+    <ion-input
+      placeholder="versa@versa.cl"
+      type="email"
+      fill="solid"
+      label="Correo"
+      labelPlacement="floating"
+      helperText="Enter a valid email"
+      errorText="Invalid email"
+      ngModel
+      email
+    ></ion-input>
+    <ion-input
+    placeholder="Versa"
+    type="usuario"
+    fill="solid"
+    label="Usuario"
+    labelPlacement="floating"
+    helperText="Ingresa nuevo nombre"
+    errorText="Usuario invalido"
+    ngModel
 
-    <p id="Usuario">
-      Usuario <br/> <br/>versa112
-    </p>
+  ></ion-input>
+    <ion-input
+      placeholder="Contraseña"
+      type="contraseña"
+      fill="solid"
+      label="Contraseña"
+      labelPlacement="floating"
+      helperText="Ingresa nueva contraseña"
+      errorText="Usuario invalido"
+      ngModel
 
-   
-    <p id="nombre">
-       Nombre <br/> <br/>Versa
-    </p>
+  ></ion-input>
+  <ion-input
+  placeholder="Apellido"
+  type="apellido"
+  fill="solid"
+  label="Apellido"
+  labelPlacement="floating"
+  helperText="Ingresa nuevo apellido"
+  errorText="Usuario invalido"
+  ngModel
 
-    <p id="apellido">
-      apellido <br/> <br/> Watson
-    </p>
+  ></ion-input>
 
-    <p id="fecha">
-      Fecha de nacimiento <br/> <br/>14-09-1989
-    </p>
+    <p id="comina">Región</p>
+
+    <ion-list >
+      <ion-item >
+        <ion-select  aria-label="Fruit" interface="popover" placeholder="Selección de región">
+          <ion-select-option value="apples">Región Metropolitana</ion-select-option>
+          <ion-select-option value="bananas">I Tarapacá</ion-select-option>
+          <ion-select-option value="bananas">II Antofagasta</ion-select-option>
+          <ion-select-option value="bananas">III Atacama</ion-select-option>
+          <ion-select-option value="bananas">IV Coquimbo</ion-select-option>
+          <ion-select-option value="oranges">V Región</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    
+
+    <p id="comina">Comuna</p>
+    <ion-list>
+      <ion-item>
+        <ion-select aria-label="Fruit" interface="popover" placeholder="Select fruit">
+          <ion-select-option value="apples">Apples</ion-select-option>
+          <ion-select-option value="oranges">Oranges</ion-select-option>
+          <ion-select-option value="bananas">Bananas</ion-select-option>
+          <ion-select-option value="bananas">I Tarapacá</ion-select-option>
+          <ion-select-option value="bananas">I Tarapacá</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+      
 
   </div>
 
+  <div id="container">
+    <button [routerLink]="['/inicio-sesion']" class="btn">Actualizar datos</button>
+  
+  </div>  
+  
 
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="home">
-        <img src="assets\icon\Vector.png" alt="Descripción de la imagen">
-      </ion-tab-button>
-      <ion-tab-button tab="radio">
-        <img src="assets\icon\android.png" alt="Descripción de la imagen">
-      </ion-tab-button>
-      <ion-tab-button tab="library">
-        <img src="assets\icon\pelota.png" alt="Descripción de la imagen">
-      </ion-tab-button >
-      <ion-tab-button tab="search">
-        <img src="assets\icon\info.png" alt="Descripción de la imagen">
-      </ion-tab-button>
-      
-      <ion-tab-button tab="info">
-        <button [routerLink]="['/ajustes']" class="btn">
-          <img src="assets\icon\confi.png" alt="Descripción de la imagen">
-        </button>
-      </ion-tab-button>
+
+  <footer>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+
+        <ion-tab-button [routerLink]="['/info']" tab="home">
+          <img src="assets\icon\Vector.png" alt="Descripción de la imagen">
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="['/propiedades']" tab="radio">
+          <img src="assets\icon\android.png" alt="Descripción de la imagen">
+        </ion-tab-button>
+        <ion-tab-button [routerLink]="['/inforobot']" tab="library">
+          <img src="assets\icon\pelota.png" alt="Descripción de la imagen">
+        </ion-tab-button >
+
+        <ion-tab-button [routerLink]="['/ajustes']" tab="search">
+          <img src="assets\icon\info.png" alt="Descripción de la imagen">
+        </ion-tab-button>
         
-      
-    </ion-tab-bar>
-  </ion-tabs>
+        <ion-tab-button [routerLink]="['/ajustes']" tab="search">
+          <img src="assets\icon\confi.png" alt="Descripción de la imagen">
+        </ion-tab-button>
+          
+        
+      </ion-tab-bar>
+    </ion-tabs>
+  
+  </footer>
 </ion-content>

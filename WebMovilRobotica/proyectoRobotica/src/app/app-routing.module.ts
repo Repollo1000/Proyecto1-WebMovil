@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'info',
-    loadChildren: () => import('./info/info.module').then( m => m.InfoPageModule)
+    loadChildren: () => import('./dashboard/info.module').then( m => m.InfoPageModule)
   },
   {
     path: 'inicio-sesion',
@@ -22,6 +22,14 @@ const routes: Routes = [
   {
     path: 'ajustes',
     loadChildren: () => import('./ajustes/ajustes.module').then( m => m.AjustesPageModule)
+  },
+  {
+    path: 'inforobot',
+    loadChildren: () => import('./inforobot/inforobot.module').then( m => m.InforobotPageModule)
+  },
+  {
+    path: 'propiedades',
+    loadChildren: () => import('./propiedades/propiedades.module').then( m => m.PropiedadesPageModule)
   },
 ];
 

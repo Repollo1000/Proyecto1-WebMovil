@@ -1,0 +1,174 @@
+ion-content {
+    --background: linear-gradient(180deg, rgba(225, 195, 255, 0.926) 0%, rgba(243, 220, 220, 0.84) 100%);
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ancho completo */
+    height: 100px;
+    color: #fff; /* Color del texto */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 999; /* Asegúrate de que el footer esté en la parte superior */
+  }
+  
+  
+ion-tab-bar {
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 45px 45px 0px 0px;
+}
+  
+
+ion-tab-button{
+    background-color: #C8A8E9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+}
+
+
+#imagenRobot {
+    position: absolute;
+    width: 50%; /* Establece el ancho de la imagen al 50% del ancho de su contenedor */
+    max-width: 341px; /* Establece el ancho máximo de la imagen */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción original */
+    left: 25%; /* Ajusta la posición horizontal de la imagen */
+    top: 10%; /* Ajusta la posición vertical de la imagen */
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); /* Agrega sombra a la imagen */
+}
+#nombre{
+
+    position: absolute;
+    width: 50%;
+    height: 27%;
+    left: 25%;
+    top: 48%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 150%;
+    line-height: 36px;
+    /* or 150% */
+    text-align: center;
+
+    color: #000000;
+
+}
+#parrafo1{
+    /* Descrption */
+
+    position: absolute;
+    width: 335px;
+    height: 55.64px;
+    left: 56px;
+    top: 20%px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    /* Neuturals/Grey 3 */
+    color: #808080;
+
+
+}
+#btn{
+    margin-top: 45%;
+    text-align: center;
+
+
+}
+
+
+ion-button{
+    
+    --background-color: #A259FF;
+    --color: white;
+    --padding: 20px 30px 20px 30px;
+    
+    --font-size: 15px;
+    --margin-top: 0%; /* Ajusta el valor según sea necesario */
+    
+    --background: #A259FF;
+    --border-radius: 10px;
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+    
+}
+#prop{
+
+    position: absolute;
+    width: 93.32px;
+    height: 18.55px;
+    left: 62.89px;
+    top: 518.21px;
+
+    background: #C8A8E9;
+    border-radius: 12px;
+    /* Text */
+
+    position: absolute;
+    width: 77.44px;
+    height: 12.36px;
+    left: 75.8px;
+    top: 521.3px;
+}
+#contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 124%
+  }
+  
+  #fila1, #fila2 {
+    display: flex;
+    justify-content: space-between;
+    width: 50%; /* Ajusta el ancho según tu diseño */
+  }
+  
+  #prop1, #prop2, #prop3, #prop4, #prop5, #prop6 {
+    width: 30%; /* Ajusta el ancho según tu diseño */
+    text-align: center;
+  }
+  
+  #prop1 {
+    background: #C8A8E9;
+    border-radius: 12px;
+  }
+  #prop3 {
+    background: #C8A8E9;
+    border-radius: 12px;
+  }
+  
+  #prop2 {
+    background: #C8A8E9;
+    border-radius: 12px;
+  }
+  
+  #prop4, #prop5, #prop6 {
+    width: 30%; /* Ajusta el ancho según tu diseño */
+  }
+  
+  #prop1 p, #prop2 p, #prop3 p, #prop4 p, #prop5 p, #prop6 p {
+    margin: 0;
+  }
+  
+.letra{
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    /* or 133% */
+    letter-spacing: 0.02em;
+    font-feature-settings: 'liga' off;
+
+    color: #A259FF;
+
+}
