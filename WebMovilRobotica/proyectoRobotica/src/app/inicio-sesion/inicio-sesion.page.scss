@@ -66,8 +66,45 @@ text-align: center;
     margin: 0 auto; /* Centra el botón horizontalmente */
     width: 50%;
     color: white;
-    
+    --border-radius: 12px;
   }
+  
+}
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  flex-direction: column;
+}
+.signup-container p{
+  /* Text/Small */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+  text-align: center;
+
+  /* Gray/Medium */
+  color: #A09CAB;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+
+  font-size: 16px;
+  color: #A09CAB;
+  margin-bottom: 10px; /* Ajusta según sea necesario */
+}
+.signup-container ion-button {
+  margin-top: 10px;
+  --background: transparent;
+  color: black;
+  --border-radius: 12px;
 }
 
 

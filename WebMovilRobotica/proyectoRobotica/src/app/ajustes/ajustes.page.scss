@@ -14,66 +14,91 @@ ion-tab-bar{
   
     
 }
-ion-header{
-    text-align: center;
-    flex-direction: column;
-    align-items: flex-start;
-
+ion-header {
+    text-align: center; 
     position: absolute;
-    width: 426.14px;
-    height: 50.64px;
-    
-    top: 10px;
+    width: 90%; 
+    left: 5%; 
+    height: 50px; 
+    top: 10px; 
 }
-#perfil img{
-    
-    position: absolute;
-    width: 110px;
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ancho completo */
     height: 100px;
-    left: 4px;
-    top: 105px;
+    color: #fff; /* Color del texto */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 999; /* Asegúrate de que el footer esté en la parte superior */
+  }
 
-
-}
-#perfil p{
-
+#perfil img {
     position: absolute;
-   
-    width: 52px;
-    height: 50px;
-    left: 130px;
-    top: 120px;
-
+    width: 20%; /*Arreglar*/
+    height: auto; 
+    left: 8%;
+    top: 13%; 
+}
+#perfil p {
+    position: absolute;
+    width: 19%;
+    height: auto;
+    left: 28%; 
+    top: 13%;  
 }
 
 #ajustes {
-    /* Test Field */
     position: absolute;
-    width: 315px;
-    height: 316.47px;
-    left: 58px;
-    top: 250px;
-}
+    width: 70%;
+    height: 100%;
+    left: 15%; 
+    top: 23%;
+    ion-input {
+      width: 90%;
+      margin-left: 5%;
+      margin-bottom: 10px;
+      font-size: 14px; // Tamaño de fuente más pequeño
+    }
+  
+    p#comina {
+      margin-top: 10px; // Reducir el margen superior
+      margin-bottom: 5px; // Reducir el margen inferior
+      font-size: 14px; // Tamaño de fuente más pequeño
+    }
+  
+    ion-list {
+      margin-bottom: 10px; // Reducir el margen inferior
+    }
+  
+    ion-item {
+      font-size: 14px; // Tamaño de fuente más pequeño
+    }
+  }
+  
+  
 
 #ajustes p {
-    margin-bottom: 5px; /* Espacio entre párrafos */
+    margin-bottom: 6px; /* Espacio entre párrafos */
 }
 #container{
 
 
     text-align: center;
     
-  }
+}
 .btn {
-    
     background-color: var(--ion-color-botones);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
-
     color: white;
-    padding: 20px 30px 20px 30px;
-    font-size: 15px;
-    margin-top: 770px; /* Ajusta el valor según sea necesario */
-    /* Botón */
+    padding: 2.5% 5%; 
+    font-size: 2vw; 
+    margin-top: 100vh;
+    font-size: 93%;
 
 }

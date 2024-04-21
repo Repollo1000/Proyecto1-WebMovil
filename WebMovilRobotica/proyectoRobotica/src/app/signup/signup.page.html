@@ -1,0 +1,100 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+
+  </ion-header>
+  <div id="container">
+    <div class="vertical" >
+     <img id = "imagenBienvenida" src="\assets\imagenes\logo.png" style="width: 257px;height: 155px;">
+     
+     
+    </div> 
+
+    <div class="vertical" id="texto" >
+       <p> Crear cuenta</p>
+    </div> 
+  
+  
+    <ion-content class="ion-padding">
+      <div class="login-container">
+
+        <ion-item>
+          <ion-label position="floating">Nombre de usuario</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Correo Electrónico</ion-label>
+          <ion-input ></ion-input>
+        
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">RUT</ion-label>
+          <ion-input> </ion-input>
+        </ion-item>
+      
+       
+
+        <ion-item>
+          <ion-select aria-label="City" interface="popover" placeholder="Seleccione su Región">
+            <ion-select-option value="1region">Arica y Parinacota</ion-select-option>
+            <ion-select-option value="2region">Tarapaca</ion-select-option>
+            <ion-select-option value="3region">Antofagasta</ion-select-option>
+            <ion-select-option value="4region">Atacama</ion-select-option>
+            <ion-select-option value="5region">Coquimbo</ion-select-option>
+            <ion-select-option value="6region">Valparaiso</ion-select-option>
+            <ion-select-option value="7region">Metropolitana</ion-select-option>
+            <ion-select-option value="8region">O'Higgins</ion-select-option>
+            <ion-select-option value="9region">Del Maule</ion-select-option>
+            <ion-select-option value="10region">Ñuble</ion-select-option>
+            <ion-select-option value="11region">Bio Bio</ion-select-option>
+            <ion-select-option value="12region">Araucania</ion-select-option>
+            <ion-select-option value="13region">Los Rios</ion-select-option>
+            <ion-select-option value="14region">Los Lagos</ion-select-option>
+            <ion-select-option value="15region">Aysen</ion-select-option>
+            <ion-select-option value="16region">Magallanes</ion-select-option>
+
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Comuna</ion-label>
+          <ion-input ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Confirmación Contraseña</ion-label>
+          <ion-input type="password" ></ion-input>
+        </ion-item>
+      </div>
+
+      <div class ="ver"> 
+        <ion-button color="light" routerLink="/home" >Registrar</ion-button>
+
+        <ion-checkbox> Acepto los terminos y condiciones</ion-checkbox>
+        
+        <div id="cuetaExistente" >
+          <p routerLink="/login" > ¿Ya tienes una cuenta?</p>
+        </div> 
+
+      </div>
+    </ion-content> 
+  </div>
+  
+
+
+
+ 
+
+
+
+</ion-content>
