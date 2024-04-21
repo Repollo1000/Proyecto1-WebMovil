@@ -7,9 +7,10 @@ ion-content {
   background-color: #C3C7F3;
   position: absolute;
   width: 95%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 0%;
   height: auto;
-  left: 15px;
-  right: 15px;
   position: relative;
   display: flex;
   align-items: center;
@@ -71,13 +72,13 @@ ion-content {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 90px;
   position: absolute;
-  width: 95%;
+  width: 90%;
   height: 65px;
   left: 0px;
   position: relative;
 
   ion-row {
-    width: 80%; /* Ocupar todo el espacio horizontal */
+    width: 100%; /* Ocupar todo el espacio horizontal */
   }
 
   ion-col {
@@ -118,9 +119,8 @@ ion-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, auto);
-    gap: 20px; /* Espacio entre las tarjetas */
-    margin-left: 20%;
-    margin-right: 20%;
+    gap: 10px; /* Espacio entre las tarjetas */
+    margin: auto;
 
 }
   
@@ -128,7 +128,7 @@ ion-card {
     /* Categoria 1 */
     
       box-sizing: border-box;
-      width: 162px;
+      width: auto;
       height: 140px;
     
       background: #F3DCDC;
@@ -136,41 +136,49 @@ ion-card {
       box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 45px;
      
-    
+
+      
 }
+
+ion-card-header{
+  display: flex; /* Utiliza flexbox para centrado */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100%;
+  width: 100%; /* Define el alto del contenedor para que el centrado funcione */
+}
+
   #fotoModulo{
     position: absolute;
     width: 90px;
     height: 85px;
-    left: 31px;
-    top: 6px;
+    top: 10px;
 
     border-radius: 90px;
     
 }
-ion-card-content{
+ion-card-content {
   position: absolute;
-  width: 150px;
-  height: 40px;
-  left: 9px;
-  top: 90px;
-  
+  width: 100%;  /* Asegura que el contenedor ocupa el 100% del espacio disponible */
+  height: 40px; /* Definición del alto */
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center;    /* Centrado vertical */
+  text-align: center;     /* Centrado del texto */
+  top: 110px; 
+  bottom: 10px;             /* Posicionamiento vertical desde el elemento padre */
   font-family: 'Inter';
   font-style: normal;
   font-weight: 650;
   font-size: 12px;
   line-height: 20px;
-  /* or 167% */
-  text-align: center;
-  
   color: #000000;
 }
 
 #actividades {
-  position: relative;
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-bottom: 100px;
+  display: block; /* O puede ser flex si quieres centrar varios elementos */
+  position: relative; /* Para permitir el uso de posición relativa/absoluta */
+  width: 100%; /* Define el ancho del div para que pueda ser centrado */
 }
 
 #actividades section h2{
@@ -197,18 +205,17 @@ ion-card-content{
                -1px 1px 0 #000,
                1px 1px 0 #000;
 }
-#fondo{
 
-  position: absolute;
-  width: 265px;
-  height: 49px;
-  left: 79px;
-  position: relative;
-  
 
-  background: rgba(195, 199, 243, 1);
-  border-radius: 90px 90px 0px 0px;
-
+#fondo {
+  margin: auto;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  width: 265px;  /* Ancho del elemento */
+  height: 49px;  /* Altura del elemento */
+  position: relative; /* Mantener relativo para que el posicionamiento funcione */
+  background: rgba(195, 199, 243, 1); /* Color de fondo */
+  border-radius: 90px 90px 0px 0px; /* Bordes redondeados */
 
 }
 
@@ -228,7 +235,6 @@ ion-card-content{
   color: #000000;
   background: #F5F5F5;
   border-radius: 90px;
-  margin-top: 5px;
   margin-left: 10px;
   margin-right: 10px;
   padding: 5px 5px; /* Ajustar el relleno según sea necesario */
@@ -239,11 +245,12 @@ ion-card-content{
 #section2{
   background: rgba(195, 199, 243,1);
   border-radius: 10px;
-  position: absolute;
-  padding-block-start: 5%;
-  width: 390px;
-  height: 130px;
-  left: 19px;
+  padding-block-start: 2%;
+  margin: 2%;
+  margin-top: 0%;
+  margin-bottom: 20%;
+  width: auto;
+  height: 120px;
   position: relative;
   
 
