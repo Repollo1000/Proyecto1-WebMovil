@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: 'info',
-    loadChildren: () => import('./paginas/dashboard/info.module').then( m => m.InfoPageModule)
+    loadChildren: () => import('./paginas/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
   {
     path: 'inicio-sesion',
@@ -39,9 +39,14 @@ const routes: Routes = [
   {
     path: 'testing',
     loadChildren: () => import('./paginas/testing/testing.module').then( m => m.TestingPageModule)
-  },  {
+  },
+  {
     path: 'asesor-deportivo',
     loadChildren: () => import('./paginas/asesor-deportivo/asesor-deportivo.module').then( m => m.AsesorDeportivoPageModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./paginas/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
 
 

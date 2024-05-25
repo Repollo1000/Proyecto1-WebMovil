@@ -1,0 +1,56 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense"></ion-header>
+
+  <div id="encabezado">
+    <p>Hola!<br>Soy VersaAssist tu <br>asistente</p>
+    <img id="fotoPerfil" src="assets/imagenes/fotoPerfil.png" alt="Descripción de la imagen">
+  </div> 
+
+  <div id="servicios">
+    <h1>Servicios</h1>
+  </div>
+
+  <div id="modulos" class="flex-container">
+    <ion-card class="card">
+      <ion-card-content class="card-content">
+        <img class="fotoModulo" src="assets/imagenes/recordatorio.png" alt="fotoModulo">
+        <div class="text-content">Recordatorios de tareas y citas.</div>
+      </ion-card-content>
+    </ion-card>
+    
+    <ion-card class="card">
+      <ion-card-content class="card-content">
+        <img class="fotoModulo" src="assets/imagenes/asesoramiento.png" alt="Descripción de la imagen">
+        <div class="text-content">Asesoramiento emocional</div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="card">
+      <ion-card-content class="card-content">
+        <img class="fotoModulo" src="assets/imagenes/gestion.png" alt="Descripción de la imagen">
+        <div class="text-content">Gestión de proyectos.</div>
+      </ion-card-content>
+    </ion-card>
+    
+    <ion-card class="card">
+      <ion-card-content class="card-content">
+        <img class="fotoModulo" src="assets/imagenes/actividad.png" alt="Descripción de la imagen">
+        <div class="text-content">Actividad física y ejercicios.</div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div id="actividades">
+    
+    <section id="fondo">
+      <h2>Actividades Recientes</h2> 
+    </section>
+
+    <section id="section2">
+      <p><ion-icon name="heart"></ion-icon>Recordatorios de medicamentos y citas médicas.</p>
+      <p><ion-icon name="heart"></ion-icon>Recetas y sugerencias de cocina.</p>
+    </section>
+  </div>
+</ion-content>
+
+<app-footer></app-footer>
