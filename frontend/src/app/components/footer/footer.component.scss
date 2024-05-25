@@ -1,0 +1,49 @@
+:host {
+  display: block;
+  width: 100%; /* Ancho completo */
+  height: 50px; /* Ajusta la altura según sea necesario */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: transparent; /* Fondo transparente para el host */
+  color: #fff; /* Color del texto */
+  text-align: center;
+  z-index: 999; /* Asegúrate de que el footer esté en la parte superior */
+}
+
+ion-tab-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%; /* Asegura que el contenido del tab bar llene todo el espacio */
+  padding: 0 10px; /* Espaciado interno */
+  background-color: #C8A8E9; /* Color de fondo del tab bar */
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); /* Sombra interna */
+  border-radius: 45px 45px 0px 0px; /* Bordes redondeados en la parte superior */
+}
+
+ion-tab-button {
+  flex: 1; /* Asegura que los botones ocupen el mismo espacio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; /* Fondo transparente */
+}
+
+ion-tab-button img {
+  width: 24px; /* Ancho del ícono */
+  height: 24px; /* Altura del ícono */
+}
+
+@media (min-width: 768px) {
+  :host {
+    height: 60px; /* Altura mayor en pantallas más grandes */
+  }
+
+  ion-tab-button img {
+    width: 32px; /* Tamaño del ícono mayor en pantallas más grandes */
+    height: 32px;
+  }
+}
+
+  
