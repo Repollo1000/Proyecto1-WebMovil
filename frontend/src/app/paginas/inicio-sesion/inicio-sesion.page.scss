@@ -1,0 +1,61 @@
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  margin-top: 155px;
+  width: 257px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 20px;
+  color: #333;
+}
+
+.login-container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 400px;
+
+  ion-item {
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  .btn-login {
+    margin-top: 20px;
+    --background: #b19cd9; /* Color del botón según la imagen */
+    --color: white;
+    --border-radius: 12px;
+    font-weight: bold;
+    --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #A09CAB;
+    margin-bottom: 10px;
+  }
+
+  ion-button {
+    --background: transparent;
+    color: #5a67d8;
+    --border-radius: 12px;
+  }
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}

@@ -1,0 +1,63 @@
+#logo {
+  display: block;
+  margin: 50px auto 20px auto;
+  width: 257px;
+  height: 155px;
+}
+
+#texto {
+  color: black;
+  text-align: center;
+  font-family: Sans-serif;
+  font-size: 22.73px;
+  font-weight: 600;
+  line-height: 36.36px;
+  margin-bottom: 20px;
+}
+
+.login-container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+ion-item {
+  margin-bottom: 20px;
+  border-radius: 12px;
+  --background: #f3f3f3;
+  --padding-start: 12px;
+}
+
+ion-input::part(native),
+ion-select::part(native) {
+  padding: 12px;
+}
+
+ion-select {
+  width: 100%;
+}
+
+ion-button {
+  width: 100%;
+  margin-top: 20px;
+  --border-radius: 12px;
+  --background: #b4aafc;
+  --color: white;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#cuentaExistente {
+  color: #c2bdbd;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.ion-padding {
+  padding: 20px;
+}
