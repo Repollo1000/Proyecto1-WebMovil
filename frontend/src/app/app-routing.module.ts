@@ -39,7 +39,11 @@ const routes: Routes = [
   {
     path: 'testing',
     loadChildren: () => import('./paginas/testing/testing.module').then( m => m.TestingPageModule)
+  },  {
+    path: 'asesor-deportivo',
+    loadChildren: () => import('./paginas/asesor-deportivo/asesor-deportivo.module').then( m => m.AsesorDeportivoPageModule)
   },
+
 
 ];
 

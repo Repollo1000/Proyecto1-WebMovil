@@ -4,6 +4,8 @@ import { IonicModule } from '@ionic/angular';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 
+
+
 @NgModule({
   declarations: [FooterComponent],
   imports: [
