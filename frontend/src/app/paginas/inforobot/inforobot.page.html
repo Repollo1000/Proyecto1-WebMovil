@@ -1,0 +1,66 @@
+
+<ion-content [fullscreen]="true">
+
+  <h1 class="container">
+    Información Robot
+  </h1>
+
+  <div class="container">
+    <img id="perfil" src="assets\imagenes\imgperfilonlinec.png" alt="Descripción de la imagen">
+
+    <p id="n">Versa<br/>Online
+    </p>
+  
+
+
+  </div>
+
+
+  <div class="containerb">
+
+    <button id="btn1">
+      Datos del entorno
+    </button>
+    <button id="btn2">
+      Historial de interacciones
+    </button>
+    <button id="btn3">
+      Historial de búsqueda y navegación
+    </button>
+
+  </div>
+
+  <footer>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+
+        <ion-tab-button [routerLink]="['/info']" tab="home">
+          <img src="assets\icon\Vector.png" alt="Descripción de la imagen">
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="['/propiedades']" tab="radio">
+          <img src="assets\icon\android.png" alt="Descripción de la imagen">
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="['/inforobot']" tab="library">
+          <img src="assets\icon\pelota.png" alt="Descripción de la imagen">
+        </ion-tab-button >
+
+        <ion-tab-button [routerLink]="['/ajustes']" tab="search">
+          <img src="assets\icon\info.png" alt="Descripción de la imagen">
+        </ion-tab-button>
+        
+        <ion-tab-button [routerLink]="['/ajustes']" tab="search">
+          <img src="assets\icon\confi.png" alt="Descripción de la imagen">
+        </ion-tab-button>
+          
+        
+      </ion-tab-bar>
+    </ion-tabs>
+  
+  </footer>
+
+
+
+
+</ion-content>
