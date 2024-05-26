@@ -1,80 +1,79 @@
 /* home.page.scss */
 .centered-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background-color: rgb(249, 229, 250);
-    padding: 0; /* Quita cualquier padding adicional */
-    margin: 0; /* Quita cualquier margen adicional */
-  }
-  
-  .card {
-    display: flex;
-    flex-direction: column; /* Asegura que los elementos se dispongan verticalmente */
-    align-items: center;
-    width: 100%; /* Ocupa el 100% del ancho del contenedor */
-    height: 100%; /* Ocupa el 100% de la altura del contenedor */
-    border: none; /* Elimina el borde */
-    border-radius: 0; /* Elimina el radio de borde */
-    padding: 16px;
-    box-shadow: none; /* Elimina la sombra */
-    background-color: rgb(249, 229, 250); /* Color de fondo de la tarjeta */
-    text-align: center;
-  }
-  
-  .card-image {
-    width: 100px; /* Ajusta el tamaño de la imagen aquí */
-    height: auto; /* Mantén la relación de aspecto */
-    border-radius: 15px;
-    margin-bottom: 16px;
-  }
-  
-  .card-title {
-    font-size: 1.5em;
-    margin: 1px 0;
-    font-family: 'Inter';
-    font-style: italic;
-    text-align: center;
-    color: #000000;
-    font-weight: bold; /* Ajusta la negrita */
-  }
-  
-  .card-box {
-    width: calc(100% - 32px); /* Ajusta el ancho de la card-box */
-    padding: 12px; /* Ajusta el padding interno */
-    border: 1px solid #ccc; /* Ajusta el borde */
-    border-radius: 8px; /* Ajusta el radio del borde */
-    background-color: #f2f2f2; /* Cambia a un gris más claro */
-    margin-top: 10px;
-    font-family: 'Inter'; /* Cambia el tipo de letra */
-    color: #333; /* Color del texto */
-    line-height: 1.5; /* Altura de línea */
-  }
-  
-  .custom-button {
-    --background: #E6E6FA; /* Lila claro */
-    --background-activated: #d2a2d2; /* Lila más oscuro para el estado activado */
-    --background-focused: #DDA0DD; /* Lila más oscuro para el estado enfocado */
-    --background-hover: #cc86cc; /* Lila más oscuro para el estado hover */
-    margin-top: 16px; /* Añade margen superior para separación del contenido */
-  }
-  
-  footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%; /* Ancho completo */
-    height: 100px;
-    color: #fff; /* Color del texto */
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    z-index: 999; /* Asegúrate de que el footer esté en la parte superior */
-  }
-  
-  ion-tab-button {
-    background-color: #C8A8E9; /* Color de fondo de los botones de pestaña */
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgb(249, 229, 250);
+  padding: 0; /* Quita cualquier padding adicional */
+  margin: 0; /* Quita cualquier margen adicional */
+}
+
+.card {
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos se dispongan verticalmente */
+  align-items: center;
+  width: 100%; /* Ocupa el 100% del ancho del contenedor */
+  height: 100%; /* Ocupa el 100% de la altura del contenedor */
+  border: none; /* Elimina el borde */
+  border-radius: 0; /* Elimina el radio de borde */
+  padding: 16px;
+  box-shadow: none; /* Elimina la sombra */
+  background-color: rgb(249, 229, 250); /* Color de fondo de la tarjeta */
+  text-align: center;
+}
+
+.card-image {
+  width: 100px; /* Ajusta el tamaño de la imagen aquí */
+  height: auto; /* Mantén la relación de aspecto */
+  border-radius: 15px;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 1.5em;
+  margin: 1px 0;
+  font-family: 'Inter';
+  font-style: italic;
+  text-align: center;
+  color: #000000;
+  font-weight: bold; /* Ajusta la negrita */
+}
+
+.card-box {
+  width: calc(100% - 32px); /* Ajusta el ancho de la card-box */
+  padding: 12px; /* Ajusta el padding interno */
+  border: 1px solid #ccc; /* Ajusta el borde */
+  border-radius: 8px; /* Ajusta el radio del borde */
+  background-color: #f2f2f2; /* Cambia a un gris más claro */
+  margin-top: 10px;
+  font-family: 'Inter'; /* Cambia el tipo de letra */
+  color: #333; /* Color del texto */
+  line-height: 1.5; /* Altura de línea */
+}
+
+.custom-button {
+  --background: #E6E6FA; /* Lila claro */
+  --background-activated: #d2a2d2; /* Lila más oscuro para el estado activado */
+  --background-focused: #DDA0DD; /* Lila más oscuro para el estado enfocado */
+  --background-hover: #cc86cc; /* Lila más oscuro para el estado hover */
+  margin-top: 16px; /* Añade margen superior para separación del contenido */
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Ancho completo */
+  height: 100px;
+  color: #fff; /* Color del texto */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 999; /* Asegúrate de que el footer esté en la parte superior */
+}
+
+ion-tab-button {
+  background-color: #C8A8E9; /* Color de fondo de los botones de pestaña */
+}

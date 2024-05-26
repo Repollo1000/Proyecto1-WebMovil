@@ -7,18 +7,19 @@
         <p>OHBOT es un robot humanoide interactivo y educativo, diseñado para comunicarse emocionalmente y realizar una variedad de tareas programables.</p>
         <h2>Sensores y Actuadores</h2>
         <p>
-          - Cámara: Ubicada en la cabeza para visión frontal.<br>
-          - Micrófono: Situado en la cabeza o cerca de la boca para capturar sonido claro.<br>
-          - Parlantes: Colocados en la cabeza o base para buena propagación del sonido.<br>
-          - Motores/Servos: Distribuidos por el robot para permitir movimientos:<br>
-           - Cuello: Movimiento de la cabeza.<br>
-           - Ojos: Movimiento ocular.<br>
-           - Boca: Simulación del habla.</p>
-           <ion-button expand="block" class="custom-button" href="https://www.ohbot.co.uk/oh_old.html">Más información Website OHBOT</ion-button>
+          <ng-container *ngFor="let component of componentsData">
+            - {{ component.name }}: {{ component.description }}<br>
+            <ng-container *ngIf="component.subcomponents">
+              <ng-container *ngFor="let subcomponent of component.subcomponents">
+                &emsp;- {{ subcomponent.name }}: {{ subcomponent.description }}<br>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+        </p>
+        <ion-button expand="block" class="custom-button" href="https://www.ohbot.co.uk/oh_old.html">Más información Website OHBOT</ion-button>
       </div>
     </div>
   </div>
-  
 </ion-content>
 
 <app-footer></app-footer>
