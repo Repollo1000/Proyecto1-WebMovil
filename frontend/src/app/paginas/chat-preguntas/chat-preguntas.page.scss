@@ -7,8 +7,8 @@ ion-content {
     justify-content: center;     
     align-items: center;        
     width: auto;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 35px;
+    margin-right: 35px;
     border-radius: 32px 32px 20px 20px;
     margin-top: 10px;
     background-color: rgb(243, 169, 225);
@@ -21,20 +21,33 @@ ion-content {
 }
 
 #asis {
-    text-align: right;
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #000000;
+
+    transform: rotate(-0.37deg);
+
+
+    text-align: center;
     margin-right: 20%;
     padding: 10px 10px;
     
 }
 
 #container {
-    background-color: white;
-    width: 350px;    /* Ancho del rectángulo */
-    height:630px;   /* Altura del rectángulo */
-    margin: 20px auto; /* Centrado horizontal */
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.692);
+    margin-left: 25px;
+    margin-right: 25px;
+    height: 70%;
+    margin-bottom: 75px;
     padding: 20px;   /* Espacio interno */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un mejor efecto visual */
-    border-radius: 10px; /* Esquinas redondeadas opcional */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra para un mejor efecto visual */
+    border-radius: 20px; /* Esquinas redondeadas opcional */
 
 }
 #chat1 {
@@ -66,17 +79,12 @@ ion-content {
     align-items: center;
 }
 #pantallachat{
-    width: 300px;    
-    height: 450px;   
-    position: absolute;      
-    bottom:-70px;
-    left: 50%;       
-    transform: translate(-50%, -50%); /* Ajuste de la posición horizontal y vertical */
-    border-radius: 5px; 
-    font-size: 15px;  
-    white-space: nowrap;
+    margin-top: 20px;
+    width: 100%;    
+    height: 70%;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 35px;  
     background-color: rgb(254, 237, 254);
-
 
 }
 #botonvolver{
