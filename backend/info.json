@@ -1,0 +1,35 @@
+{
+    "components": [
+      {
+        "name": "Cámara",
+        "description": "Ubicada en la cabeza para visión frontal"
+      },
+      {
+        "name": "Micrófono",
+        "description": "Situado en la cabeza o cerca de la boca para capturar sonido claro"
+      },
+      {
+        "name": "Parlantes",
+        "description": "Colocados en la cabeza o base para buena propagación del sonido"
+      },
+      {
+        "name": "Motores/Servos",
+        "description": "Distribuidos por el robot para permitir movimientos",
+        "subcomponents": [
+          {
+            "name": "Cuello",
+            "description": "Movimiento de la cabeza"
+          },
+          {
+            "name": "Ojos",
+            "description": "Movimiento ocular"
+          },
+          {
+            "name": "Boca",
+            "description": "Simulación del habla"
+          }
+        ]
+      }
+    ]
+  }
+  

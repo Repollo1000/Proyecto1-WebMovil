@@ -12,10 +12,10 @@
 
   <div id="modulos" class="flex-container">
     <ion-card class="card">
-      <button ion-button="clear" class="card-content-button">
+      <button ion-button="clear" [routerLink]="['/asesor-deportivo']"  class="card-content-button">
         <ion-card-content class="card-content">
           <img class="fotoModulo" src="assets/imagenes/recordatorio.png" alt="fotoModulo">
-          <div class="text-content">Recordatorios de tareas y citas.</div>
+          <div class="text-content">Asesor deportivo</div>
         </ion-card-content>
       </button>
     </ion-card>
@@ -33,16 +33,16 @@
       <button ion-button="clear" class="card-content-button">
         <ion-card-content class="card-content">
           <img class="fotoModulo" src="assets/imagenes/gestion.png" alt="Descripción de la imagen">
-          <div class="text-content">Gestión de proyectos.</div>
+          <div class="text-content">Tutor de matematica</div>
         </ion-card-content>
       </button>
     </ion-card>
     
     <ion-card class="card">
-      <button ion-button="clear" class="card-content-button">
+      <button ion-button="clear" [routerLink]="['/chat-preguntas']" class="card-content-button">
         <ion-card-content class="card-content">
           <img class="fotoModulo" src="assets/imagenes/actividad.png" alt="Descripción de la imagen">
-          <div class="text-content">Actividad física y ejercicios.</div>
+          <div class="text-content">Resolver preguntas</div>
         </ion-card-content>
       </button>
     </ion-card>
@@ -54,8 +54,8 @@
     </section>
 
     <section id="section2">
-      <p><ion-icon name="heart"></ion-icon>Recordatorios de medicamentos y citas médicas.</p>
-      <p><ion-icon name="heart"></ion-icon>Recetas y sugerencias de cocina.</p>
+      <p><ion-icon name="heart"></ion-icon>Asesor Emocional</p>
+      <p><ion-icon name="heart"></ion-icon>Asesor Deportivo</p>
     </section>
   </div>
 </ion-content>

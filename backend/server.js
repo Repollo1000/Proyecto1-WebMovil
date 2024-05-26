@@ -70,3 +70,15 @@ app.post('/login', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
+
+
+app.get('/info', (req, res) => {
+  fs.readFile('info.json', (err, data) => {
+    if (err) {
+      console.error('Error reading info.json:', err);
+      res.status(500).json({ message: 'Error reading info.json' });
+      return;
+    }
+    res.json(JSON.parse(data));
+  });
+});
