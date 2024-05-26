@@ -135,3 +135,12 @@ ion-card {
   align-items: center;
   justify-content: center;
 }
+.card-content-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer; /* Cambia el cursor para indicar que es un botón */
+}
