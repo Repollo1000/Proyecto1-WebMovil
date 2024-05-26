@@ -1,0 +1,95 @@
+ion-content {
+    --background: linear-gradient(180deg, rgba(225, 195, 255, 0.926) 0%, rgba(243, 220, 220, 0.84) 100%);
+}
+
+#encabezado {
+    display: flex;               
+    justify-content: center;     
+    align-items: center;        
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 32px 32px 20px 20px;
+    margin-top: 10px;
+    background-color: rgb(243, 169, 225);
+}  
+#fotoOhbot {
+    display: flex;
+    margin-right: 30px; 
+    width: 30%;
+
+}
+
+#asis {
+    text-align: right;
+    margin-right: 20%;
+    padding: 10px 10px;
+    
+}
+
+#container {
+    background-color: white;
+    width: 350px;    /* Ancho del rectángulo */
+    height:630px;   /* Altura del rectángulo */
+    margin: 20px auto; /* Centrado horizontal */
+    padding: 20px;   /* Espacio interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un mejor efecto visual */
+    border-radius: 10px; /* Esquinas redondeadas opcional */
+
+}
+#chat1 {
+    width: 50px;    
+    height: 5px;   
+    top: -10px;
+    position: absolute;        
+    left: 55%;       
+    transform: translate(-50%, -50%); /* Ajuste de la posición horizontal y vertical */
+    border-radius: 5px; 
+    font-size: 15px;  
+    white-space: nowrap;
+
+}
+
+#titulochat {
+    margin-bottom: 20px;
+    top:-15px;
+    background-color: white;
+    width: 70px;    
+    height: 30px;    
+    position: relative; /* Posicionamiento relativo para contener a #chat1 */
+    margin: 20px auto; /* Centrado horizontal */
+    padding: 0px;   /* Espacio interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un mejor efecto visual */
+    border-radius: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#pantallachat{
+    width: 300px;    
+    height: 450px;   
+    position: absolute;      
+    bottom:-70px;
+    left: 50%;       
+    transform: translate(-50%, -50%); /* Ajuste de la posición horizontal y vertical */
+    border-radius: 5px; 
+    font-size: 15px;  
+    white-space: nowrap;
+    background-color: rgb(254, 237, 254);
+
+
+}
+#botonvolver{
+    width: 40px;    
+    height: 30px;   
+    position: absolute;
+    bottom: 95px;      
+    left: 45%;       
+    transform: translate(-50%, -50%); /* Ajuste de la posición horizontal y vertical */
+    border-radius: 5px; 
+    font-size: 15px;  
+    white-space: nowrap;
+    
+
+
+}

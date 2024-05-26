@@ -47,7 +47,15 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./paginas/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },  {
+    path: 'ohbotinfo',
+    loadChildren: () => import('./paginas/ohbotinfo/ohbotinfo.module').then( m => m.OhbotinfoPageModule)
   },
+  {
+    path: 'chat-deportivo',
+    loadChildren: () => import('./paginas/chat-deportivo/chat-deportivo.module').then( m => m.ChatDeportivoPageModule)
+  },
+
 
 
 ];
