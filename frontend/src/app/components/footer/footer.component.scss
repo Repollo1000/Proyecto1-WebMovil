@@ -22,6 +22,18 @@ ion-tab-bar {
   border-radius: 45px 45px 0px 0px; /* Bordes redondeados en la parte superior */
 }
 
+.custom-color-info {
+  background-color: #C3C7F3; /* Color alternativo para /info */
+}
+
+.custom-color-ohbotinfo {
+  background-color: #C3C7F3; /* Color alternativo para /ohbotinfo */
+}
+
+.custom-color-ajustes {
+  background-color: #C3C7F3; /* Color alternativo para /ajustes */
+}
+
 ion-tab-button {
   flex: 1; /* Asegura que los botones ocupen el mismo espacio */
   display: flex;

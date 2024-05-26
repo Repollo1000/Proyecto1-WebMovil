@@ -1,14 +1,14 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button [routerLink]="['/info']" tab="home">
+    <ion-tab-button [routerLink]="['/info']" tab="home" [ngClass]="{'custom-color-info': currentRoute === '/info'}">
       <img src="assets/icon/Vector.png" alt="Descripción de la imagen">
     </ion-tab-button>
 
-    <ion-tab-button [routerLink]="['/ohbotinfo']" tab="search">
+    <ion-tab-button [routerLink]="['/ohbotinfo']" tab="search" [ngClass]="{'custom-color-ohbotinfo': currentRoute === '/ohbotinfo'}">
       <img src="assets/icon/info.png" alt="Descripción de la imagen">
     </ion-tab-button>
 
-    <ion-tab-button [routerLink]="['/ajustes']" tab="settings">
+    <ion-tab-button [routerLink]="['/ajustes']" tab="settings" [ngClass]="{'custom-color-ajustes': currentRoute === '/ajustes'}">
       <img src="assets/icon/confi.png" alt="Descripción de la imagen">
     </ion-tab-button>
   </ion-tab-bar>
