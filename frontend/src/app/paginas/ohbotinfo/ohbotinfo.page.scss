@@ -1,10 +1,13 @@
-/* home.page.scss */
+ion-content {
+  --background: linear-gradient(180deg, #C8A8E9 0%, #F3DCDC 100%);
+ 
+}
+
 .centered-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: rgb(249, 229, 250);
   padding: 0; /* Quita cualquier padding adicional */
   margin: 0; /* Quita cualquier margen adicional */
 }
@@ -19,7 +22,7 @@
   border-radius: 0; /* Elimina el radio de borde */
   padding: 16px;
   box-shadow: none; /* Elimina la sombra */
-  background-color: rgb(249, 229, 250); /* Color de fondo de la tarjeta */
+
   text-align: center;
 }
 
@@ -44,7 +47,7 @@
   width: calc(100% - 32px); /* Ajusta el ancho de la card-box */
   padding: 12px; /* Ajusta el padding interno */
   border: 1px solid #ccc; /* Ajusta el borde */
-  border-radius: 8px; /* Ajusta el radio del borde */
+  border-radius: 25px; /* Ajusta el radio del borde */
   background-color: #f2f2f2; /* Cambia a un gris más claro */
   margin-top: 10px;
   font-family: 'Inter'; /* Cambia el tipo de letra */
@@ -53,7 +56,7 @@
 }
 
 .custom-button {
-  --background: #E6E6FA; /* Lila claro */
+  --background: #C3C7F3;
   --background-activated: #d2a2d2; /* Lila más oscuro para el estado activado */
   --background-focused: #DDA0DD; /* Lila más oscuro para el estado enfocado */
   --background-hover: #cc86cc; /* Lila más oscuro para el estado hover */
