@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./paginas/home/home.module').then(m => m.HomePageModule)
   },
   {
-    path: 'info',
+    path: 'dashboard',
     loadChildren: () => import('./paginas/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
   {
