@@ -1,7 +1,14 @@
 # Proyecto1-WebMovil
+Integrantes del Proyecto
+Sofía Labra
+Maite Villalón
+Sebastian Soza
+Paul Rojas
 
 Descripción
-Esta aplicación móvil está diseñada para interactuar con el robot Ohbot. Captura las conversaciones entre el usuario y el robot, almacena los datos en un archivo JSON.
+Nuestra aplicación proporciona acceso a información detallada sobre el robot, incluidos sus datos ambientales, historial de interacciones e historial de búsqueda y navegación. Esto permite al usuario comprender mejor el funcionamiento del robot y maximizar su utilidad en diferentes contextos.
+
+link figma: https://www.figma.com/design/Ynx0jxkpPxQCVdKKf2hMCo/Website?node-id=0-1&t=B3ndAtTMrXJB5bIa-1
 
 Antes de comenzar, asegúrate de tener instalados los siguientes requisitos:
 
@@ -41,12 +48,26 @@ project-root/
   │   ├── server.js
   │   ├── users.json
   │   └── package.json
+  │   └── info.json
+  │   └── package-lock.json
   ├── frontend/
   │   ├── src/
   │   │   ├── app/
   │   │   │   ├── components/
   │   │   │   │   ├── app-routing.module.ts
   │   │   │   ├── paginas/
+  │   │   │   │   ├── asesor-deportivo/
+  │   │   │   │   │   ├── asesor-deportivo.html
+  │   │   │   │   │   ├── asesor-deportivo.scss
+  │   │   │   │   │   ├── asesor-deportivo.ts
+  │   │   │   │   ├── Chat-deportivas/
+  │   │   │   │   │   ├── Chat-deportivas.html
+  │   │   │   │   │   ├── Chat-deportivas.scss
+  │   │   │   │   │   ├── Chat-deportivas.ts
+  │   │   │   │   ├── Chat-preguntas/
+  │   │   │   │   │   ├── Chat-preguntas.html
+  │   │   │   │   │   ├── Chat-preguntas.scss
+  │   │   │   │   │   ├── Chat-preguntas.ts
   │   │   │   │   ├── home/
   │   │   │   │   │   ├── home.page.html
   │   │   │   │   │   ├── home.page.scss
@@ -67,6 +88,14 @@ project-root/
   │   │   │   │   │   ├── ajuste.page.html
   │   │   │   │   │   ├── ajuste.page.scss
   │   │   │   │   │   ├── ajuste.page.ts
+  │   │   │   │   ├── inforobot/
+  │   │   │   │   │   ├── inforobot.page.html
+  │   │   │   │   │   ├── inforobot.page.scss
+  │   │   │   │   │   ├── inforobot.page.ts
+  │   │   │   │   ├── inforobot/
+  │   │   │   │   │   ├── propiedades.page.html
+  │   │   │   │   │   ├── propiedades.page.scss
+  │   │   │   │   │   ├── propiedades.page.ts
   │   │   └── environments/
   │   │       ├── environment.ts
   │   └── package.json
