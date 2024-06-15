@@ -59,7 +59,11 @@ const routes: Routes = [
   {
     path: 'chat-preguntas',
     loadChildren: () => import('./paginas/chat-preguntas/chat-preguntas.module').then( m => m.ChatPreguntasPageModule)
+  },  {
+    path: 'admin-dashboard',
+    loadChildren: () => import('./paginas/admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule)
   },
+
 
 
 
