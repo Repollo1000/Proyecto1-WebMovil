@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router'; // Importa el Router
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service'; // Importa el servicio de autenticación
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -12,7 +13,12 @@ export class InicioSesionPage implements OnInit {
   email: string = '';
   password: string = '';
 
-  constructor(private alertController: AlertController, private http: HttpClient, private router: Router) { } // Añade Router al constructor
+  constructor(
+    private alertController: AlertController,
+    private http: HttpClient,
+    private router: Router,
+    private authService: AuthService // Agrega el AuthService al constructor
+  ) { }
 
   ngOnInit() { }
 
@@ -41,5 +47,9 @@ export class InicioSesionPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  async loginWithGoogle() {
+    await this.authService.signInWithGoogle(); // Llama al método desde la instancia de AuthService
   }
 }

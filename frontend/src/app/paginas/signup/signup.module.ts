@@ -8,12 +8,15 @@ import { SignupPageRoutingModule } from './signup-routing.module';
 
 import { SignupPage } from './signup.page';
 
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SignupPageRoutingModule
+    SignupPageRoutingModule,
+    AngularFireAuthModule
   ],
   declarations: [SignupPage]
 })
