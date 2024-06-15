@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+import { AuthGuard } from './services/auth.guard';
+import { AdminGuard } from './services/admin.guard';
 
 const routes: Routes = [
   {
@@ -8,15 +10,17 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./paginas/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+    loadChildren: () => import('./paginas/dashboard/dashboard.module').then(m => m.DashboardPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'inicio-sesion',
-    loadChildren: () => import('./paginas/inicio-sesion/inicio-sesion.module').then( m => m.InicioSesionPageModule)
+    loadChildren: () => import('./paginas/inicio-sesion/inicio-sesion.module').then(m => m.InicioSesionPageModule)
   },
   {
     path: 'ajustes',
-    loadChildren: () => import('./paginas/ajustes/ajustes.module').then( m => m.AjustesPageModule)
+    loadChildren: () => import('./paginas/ajustes/ajustes.module').then(m => m.AjustesPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'inforobot',
@@ -30,7 +34,6 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: () => import('./paginas/signup/signup.module').then( m => m.SignupPageModule)
   },
-  // Redirección por defecto
   {
     path: '',
     redirectTo: 'home',
@@ -45,10 +48,6 @@ const routes: Routes = [
     loadChildren: () => import('./paginas/asesor-deportivo/asesor-deportivo.module').then( m => m.AsesorDeportivoPageModule)
   },
   {
-    path: 'dashboard',
-    loadChildren: () => import('./paginas/dashboard/dashboard.module').then( m => m.DashboardPageModule)
-  },
-  {
     path: 'ohbotinfo',
     loadChildren: () => import('./paginas/ohbotinfo/ohbotinfo.module').then( m => m.OhbotinfoPageModule)
   },
@@ -59,14 +58,12 @@ const routes: Routes = [
   {
     path: 'chat-preguntas',
     loadChildren: () => import('./paginas/chat-preguntas/chat-preguntas.module').then( m => m.ChatPreguntasPageModule)
-  },  {
-    path: 'admin-dashboard',
-    loadChildren: () => import('./paginas/admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule)
   },
-
-
-
-
+  {
+    path: 'admin-dashboard',
+    loadChildren: () => import('./paginas/admin-dashboard/admin-dashboard.module').then(m => m.AdminDashboardPageModule),
+    canActivate: [AuthGuard, AdminGuard]
+  },
 ];
 
 @NgModule({
