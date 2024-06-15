@@ -50,4 +50,17 @@ export class AuthService {
 
     await alert.present();
   }
+
+  async signInWithEmail(email: string, password: string) {
+    try {
+      const result = await this.afAuth.signInWithEmailAndPassword(email, password);
+      // Si el inicio de sesión es exitoso, redirige al usuario al dashboard
+      this.router.navigate(['/dashboard']);
+    } catch (error: any) {
+      console.error(error);
+      await this.showAlert('Error', error.message || 'Ocurrió un error al iniciar sesión');
+    }
+  }
+  
+  
 }

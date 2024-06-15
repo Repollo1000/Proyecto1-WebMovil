@@ -116,4 +116,8 @@ export class SignupPage implements OnInit {
   async signInWithGoogle() {
     await this.authService.signInWithGoogle(); // Llama al método desde la instancia de AuthService
   }
+
+  signInWithEmail() {
+    this.authService.signInWithEmail(this.email, this.password);
+  }
 }
