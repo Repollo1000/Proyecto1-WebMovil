@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AuthService } from '../../services/auth.service'; // Importa el servicio AuthService
 
 @Component({
   selector: 'app-signup',
@@ -39,15 +38,9 @@ export class SignupPage implements OnInit {
     'Magallanes': ['Punta Arenas', 'Puerto Natales']
   };
 
-  constructor(
-    private alertController: AlertController,
-    private afAuth: AngularFireAuth,
-    private router: Router,
-    private authService: AuthService // Inyecta AuthService aquí
-  ) { }
+  constructor(private alertController: AlertController, private authService: AuthService, private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   updateComunas(event: any) {
     this.selectedRegion = event.detail.value;
@@ -80,22 +73,24 @@ export class SignupPage implements OnInit {
       return;
     }
 
-    try {
-      const newUserCredential = await this.afAuth.createUserWithEmailAndPassword(this.email, this.password);
+    const newUser = {
+      username: this.username,
+      email: this.email,
+      rut: this.rut,
+      region: this.selectedRegion,
+      comuna: this.selectedComuna,
+      password: this.password
+    };
 
-      // Obtén el usuario creado
-      const user = newUserCredential.user;
-
-      // Mostrar alerta de registro exitoso
-      await this.showAlert('Registro Exitoso', 'Te has registrado correctamente.');
-
-      // Redirige al usuario a otra página después del registro exitoso
-      this.router.navigate(['/info']);
-    } catch (error: any) { // Especifica el tipo de error como 'any'
-      // Maneja los errores aquí
-      console.error(error);
-      await this.showAlert('Error', error.message || 'Ocurrió un error al procesar la solicitud');
-    }
+    this.authService.register(newUser).subscribe(
+      response => {
+        // Redirigir al dashboard después de un registro exitoso
+        this.router.navigate(['/dashboard']);  // Asegúrate de que la ruta sea correcta
+      },
+      async error => {
+        await this.showAlert('Error', error.error.message || 'Ocurrió un error al procesar la solicitud');
+      }
+    );
   }
 
   isValidEmail(email: string): boolean {
@@ -111,13 +106,5 @@ export class SignupPage implements OnInit {
     });
 
     await alert.present();
-  }
-
-  async signInWithGoogle() {
-    await this.authService.signInWithGoogle(); // Llama al método desde la instancia de AuthService
-  }
-
-  signInWithEmail() {
-    this.authService.signInWithEmail(this.email, this.password);
   }
 }

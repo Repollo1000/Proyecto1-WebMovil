@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { InicioSesionPageRoutingModule } from './inicio-sesion-routing.module';
 
-import { InicioSesionPage } from '../inicio-sesion/inicio-sesion.page';
+import { InicioSesionPage } from './inicio-sesion.page';
 
 @NgModule({
   imports: [

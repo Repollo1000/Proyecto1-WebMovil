@@ -48,6 +48,7 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./paginas/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
+  { path: 'admin-dashboard', loadChildren: () => import('./paginas/admin-dashboard/admin-dashboard.module').then(m => m.AdminDashboardPageModule) },
   {
     path: 'ohbotinfo',
     loadChildren: () => import('./paginas/ohbotinfo/ohbotinfo.module').then( m => m.OhbotinfoPageModule)
@@ -64,7 +65,6 @@ const routes: Routes = [
     path: 'admin-dashboard',
     loadChildren: () => import('./paginas/admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule)
   },
-
 
 
 

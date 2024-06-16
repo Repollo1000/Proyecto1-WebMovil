@@ -1,76 +1,80 @@
 const express = require('express');
-const fs = require('fs');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const mysql = require('mysql');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+
 const app = express();
 const port = 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
 
+// Configurar la conexión a la base de datos
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root', // Reemplaza con tu usuario de MySQL
+  password: '', // Reemplaza con tu contraseña de MySQL
+  database: 'versa' // Reemplaza con el nombre de tu base de datos
+});
+
+db.connect(err => {
+  if (err) {
+    console.error('Error connecting to the database:', err);
+    return;
+  }
+  console.log('Connected to the MySQL database.');
+});
+
+// Endpoint de registro
 app.post('/save-user', (req, res) => {
-  const newUser = req.body;
-  console.log('Received user:', newUser);
+  const { username, email, rut, region, comuna, password } = req.body;
+  const hashedPassword = bcrypt.hashSync(password, 8);
 
-  fs.readFile('users.json', (err, data) => {
+  const query = 'INSERT INTO users (username, email, rut, region, comuna, password, role) VALUES (?, ?, ?, ?, ?, ?, "user")';
+  db.query(query, [username, email, rut, region, comuna, hashedPassword], (err, result) => {
     if (err) {
-      console.error('Error reading file:', err);
-      res.status(500).json({ message: 'Error reading file' });
-      return;
-    }
-    let users = JSON.parse(data);
-
-    const emailExists = users.some(user => user.email === newUser.email);
-    const rutExists = users.some(user => user.rut === newUser.rut);
-
-    if (emailExists) {
-      res.status(400).json({ message: 'El correo ya está registrado.' });
-      return;
-    }
-
-    if (rutExists) {
-      res.status(400).json({ message: 'El RUT ya está registrado.' });
-      return;
-    }
-
-    users.push(newUser);
-    fs.writeFile('users.json', JSON.stringify(users, null, 2), (err) => {
-      if (err) {
-        console.error('Error writing file:', err);
-        res.status(500).json({ message: 'Error writing file' });
-        return;
+      if (err.code === 'ER_DUP_ENTRY') {
+        return res.status(400).json({ message: 'El correo o RUT ya está registrado.' });
       }
-      res.json({ message: 'User saved' });
-      console.log('User saved:', newUser);
-    });
+      return res.status(500).json({ message: 'Error registering user' });
+    }
+    res.status(200).json({ message: 'User registered successfully' });
   });
 });
 
+// Endpoint de inicio de sesión
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
-  console.log('Login attempt:', { email, password });
 
-  fs.readFile('users.json', (err, data) => {
+  const query = 'SELECT * FROM users WHERE email = ?';
+  db.query(query, [email], (err, results) => {
     if (err) {
-      console.error('Error reading file:', err);
-      res.status(500).json({ message: 'Error reading file' });
-      return;
+      return res.status(500).json({ message: 'Error logging in' });
     }
-    let users = JSON.parse(data);
-    const user = users.find(user => user.email === email && user.password === password);
+    if (results.length === 0) {
+      return res.status(404).json({ message: 'User not found' });
+    }
 
-    if (user) {
-      res.json({ message: 'Login successful' });
-    } else {
-      res.status(400).json({ message: 'Correo o contraseña incorrectos' });
+    const user = results[0];
+    const passwordIsValid = bcrypt.compareSync(password, user.password);
+
+    if (!passwordIsValid) {
+      return res.status(401).json({ message: 'Invalid password' });
     }
+
+    const token = jwt.sign({ id: user.id, role: user.role }, 'your_secret_key', {
+      expiresIn: 86400 // 24 hours
+    });
+
+    res.status(200).json({ auth: true, token: token, role: user.role });
   });
 });
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
-
 
 app.get('/info', (req, res) => {
   fs.readFile('info.json', (err, data) => {

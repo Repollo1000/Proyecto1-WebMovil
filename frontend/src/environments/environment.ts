@@ -1,18 +1,10 @@
-
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  firebase: {
-    apiKey: "AIzaSyBT9Dx8SsL7N7iXLgoc6tkuOpe-ZiVZJ_E",
-    authDomain: "versaassist-90b42.firebaseapp.com",
-    projectId: "versaassist-90b42",
-    storageBucket: "versaassist-90b42.appspot.com",
-    messagingSenderId: "551995734375",
-    appId: "1:551995734375:web:b67d84f98662b5d41c57c2",
-    measurementId: "G-SHHTTTD7P5"
-  }
+  production: false
 };
-
 
 /*
  * For easier debugging in development mode, you can import the following file
