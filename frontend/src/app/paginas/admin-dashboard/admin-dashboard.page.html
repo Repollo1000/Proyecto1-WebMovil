@@ -1,13 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>admin-dashboard</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">admin-dashboard</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-header collapse="condense"></ion-header>
+
+  <div id="encabezado">
+    <p>Administrador - Versa-asistente</p>
+    <img id="fotoPerfil" src="assets/imagenes/fotoPerfil.png" alt="Descripción de la imagen">
+  </div> 
+
+  <div id="servicios">
+    <h1>Servicios</h1>
+    <div class="service-box">
+      <div class="service-item">
+        <p>Usuarios</p>
+        <h3>10</h3>
+      </div>
+      <div class="service-item">
+        <p>Último usuario</p>
+        <h3>Sebastian Rojas</h3>
+      </div>
+    </div>
+    <div class="service-box">
+      <div class="service-item full-width">
+        <p>Última actividad</p>
+        <h3>Asesor deportivo</h3>
+      </div>
+    </div>
+    <div class="service-box">
+      <div class="service-item full-width">
+        <p>Uso Ohbot</p>
+      </div>
+    </div>
+  </div>
 </ion-content>
