@@ -3,6 +3,9 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { CustomUser } from '../interfaz/custom-user';
 
 @Injectable({
   providedIn: 'root'
@@ -61,6 +64,17 @@ export class AuthService {
       await this.showAlert('Error', error.message || 'Ocurrió un error al iniciar sesión');
     }
   }
-  
-  
+
+  // Método para obtener el usuario actual
+  getUser(): Observable<CustomUser | null> {
+    return this.afAuth.authState.pipe(
+      map(user => {
+        if (user) {
+          return user as CustomUser;
+        } else {
+          return null;
+        }
+      })
+    );
+  }
 }
