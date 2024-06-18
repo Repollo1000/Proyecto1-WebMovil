@@ -18,7 +18,7 @@ bcrypt = Bcrypt(app)
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    passwd="versa123.",
+    passwd="Versa123.",
     database="versa"  # Reemplaza con el nombre de tu base de datos
 )
 
