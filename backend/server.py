@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import mysql.connector
 from flask_bcrypt import Bcrypt
-from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity, unset_jwt_cookies
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -18,7 +18,7 @@ bcrypt = Bcrypt(app)
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    passwd="Versa123.",
+    #passwd="Versa123.",
     database="versa"  # Reemplaza con el nombre de tu base de datos
 )
 
@@ -74,6 +74,14 @@ def login():
         return jsonify({"auth": True, "token": token, "role": user_role})
     else:
         return jsonify({"message": "Invalid password"}), 401
+
+@app.route('/logout', methods=['POST'])
+@jwt_required()  # Proteger la ruta con JWT
+def logout():
+    # Eliminar las cookies JWT del cliente (opcional si estás utilizando cookies)
+    resp = jsonify({'logout': True})
+    unset_jwt_cookies(resp)
+    return resp, 200
 
 @app.route('/info', methods=['GET'])
 def get_info():

@@ -39,9 +39,14 @@ export class AuthService {
   }
 
   // Método de cierre de sesión
-  logout() {
-    // Eliminar el usuario del local storage y establecer currentUserSubject a null
-    localStorage.removeItem('currentUser');
-    this.currentUserSubject.next(null);
+  logout(): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/logout`, {})
+      .pipe(
+        map(response => {
+          // Limpiar el almacenamiento local al cerrar sesión
+          localStorage.removeItem('currentUser');
+          return response;
+        })
+      );
   }
 }

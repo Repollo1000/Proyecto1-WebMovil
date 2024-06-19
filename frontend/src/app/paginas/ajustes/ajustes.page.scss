@@ -114,3 +114,19 @@ footer {
     font-size: 93%;
 
 }
+/* Estilos personalizados para el botón de cerrar sesión */
+.custom-button {
+  margin-top: 20px; /* Ejemplo de estilo: margen superior */
+  font-size: 18px; /* Ejemplo de estilo: tamaño de fuente */
+  font-weight: bold; /* Ejemplo de estilo: peso de la fuente */
+  --background: var(--ion-color-botones); /* Color de fondo personalizado */
+  --border-radius: 10px; /* Radio de borde personalizado */
+  --box-shadow: none; /* No mostrar sombra */
+  --color: #fff; /* Color del texto */
+  margin-left: 45px;
+  margin-right: 45px;
+}
+
+.custom-button:hover {
+  --background: var(--ion-color-botones); /* Color de fondo al pasar el ratón */
+}
