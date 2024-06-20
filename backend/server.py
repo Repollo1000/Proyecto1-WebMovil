@@ -116,5 +116,25 @@ def get_info():
     except Exception as e:
         return jsonify({"message": "Error reading info.json"}), 500
 
+# Estado inicial del script
+estado_script = "NADA"  # Estado inicial
+
+# Ruta para cambiar el estado del script
+@app.route('/cambiar_estado', methods=['POST'])
+def cambiar_estado():
+    global estado_script
+    nuevo_estado = request.json.get('estado')
+    if nuevo_estado in ["prueba_script", "prueba_script2","NADA"]:
+        estado_script = nuevo_estado
+        return jsonify({"message": f"Estado cambiado a {estado_script}"}), 200
+    else:
+        return jsonify({"error": "Estado no válido"}), 400
+
+# Ruta para obtener el estado actual del script
+@app.route('/obtener_estado', methods=['GET'])
+def obtener_estado():
+    global estado_script
+    return jsonify({"estado": estado_script}), 200
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=3000)

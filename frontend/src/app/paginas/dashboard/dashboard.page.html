@@ -3,7 +3,7 @@
 
   <div id="encabezado">
     <p>Hola!<br>Soy VersaAssist tu <br>asistente</p>
-    <img id="fotoPerfil" src="assets/imagenes/fotoPerfil.png" alt="Descripción de la imagen">
+    <img id="fotoPerfil" src="assets/imagenes/fotoPerfil.png" alt="Descripci贸n de la imagen">
   </div> 
 
   <div id="servicios">
@@ -12,7 +12,7 @@
 
   <div id="modulos" class="flex-container">
     <ion-card class="card">
-      <button ion-button="clear" [routerLink]="['/asesor-deportivo']"  class="card-content-button">
+      <button ion-button="clear" (click)="cambiarEstado('prueba_script')" [routerLink]="['/asesor-deportivo']"  class="card-content-button">
         <ion-card-content class="card-content">
           <img class="fotoModulo" src="assets/imagenes/recordatorio.png" alt="fotoModulo">
           <div class="text-content">Asesor deportivo</div>
@@ -21,18 +21,18 @@
     </ion-card>
     
     <ion-card class="card">
-      <button ion-button="clear" class="card-content-button">
+      <button ion-button="clear"  (click)="cambiarEstado('prueba_script2')" class="card-content-button">
         <ion-card-content class="card-content">
-          <img class="fotoModulo" src="assets/imagenes/asesoramiento.png" alt="Descripción de la imagen">
+          <img class="fotoModulo" src="assets/imagenes/asesoramiento.png" alt="Descripci贸n de la imagen">
           <div class="text-content">Asesoramiento emocional</div>
         </ion-card-content>
       </button>
     </ion-card>
 
     <ion-card class="card">
-      <button ion-button="clear" class="card-content-button">
+      <button ion-button="clear"  (click)="cambiarEstado('conversacion_matematicas')" class="card-content-button">
         <ion-card-content class="card-content">
-          <img class="fotoModulo" src="assets/imagenes/gestion.png" alt="Descripción de la imagen">
+          <img class="fotoModulo" src="assets/imagenes/gestion.png" alt="Descripci贸n de la imagen">
           <div class="text-content">Tutor de matematica</div>
         </ion-card-content>
       </button>
@@ -41,7 +41,7 @@
     <ion-card class="card">
       <button ion-button="clear" [routerLink]="['/chat-preguntas']" class="card-content-button">
         <ion-card-content class="card-content">
-          <img class="fotoModulo" src="assets/imagenes/actividad.png" alt="Descripción de la imagen">
+          <img class="fotoModulo" src="assets/imagenes/actividad.png" alt="Descripci贸n de la imagen">
           <div class="text-content">Resolver preguntas</div>
         </ion-card-content>
       </button>
