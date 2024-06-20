@@ -33,20 +33,14 @@ export class AjustesPage implements OnInit {
     this.authService.logout().subscribe(
       () => {
         console.log('Sesión cerrada correctamente');
-        // Redirige a la página de inicio de sesión u otra página según tu flujo de la aplicación
-        this.router.navigate(['/inicio-sesion']);
+        this.router.navigate(['/inicio-sesion']); // Redirige a la página de inicio de sesión
       },
-      (error: HttpErrorResponse) => { // Especifica HttpErrorResponse para manejar errores de HTTP
+      (error: HttpErrorResponse) => {
         console.error('Error al intentar cerrar sesión', error);
-        // Aquí puedes manejar el error según su tipo
         if (error.status === 401) {
-          // Por ejemplo, si el servidor responde con un código 401 (Unauthorized)
-          // Puedes redirigir a una página de inicio de sesión o mostrar un mensaje al usuario
-          this.router.navigate(['/login']);
+          this.router.navigate(['/inicio-sesion']);
         } else {
           // Manejo genérico de otros errores
-          // Puedes mostrar un mensaje de error al usuario
-          // O redirigir a una página de error
         }
       }
     );

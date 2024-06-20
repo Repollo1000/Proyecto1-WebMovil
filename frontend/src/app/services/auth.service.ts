@@ -37,7 +37,9 @@ export class AuthService {
   }
 
   logout(): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/logout`, {})
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.post<any>(`${this.apiUrl}/logout`, {}, { headers })
       .pipe(
         map(response => {
           localStorage.removeItem('currentUser');

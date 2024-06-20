@@ -101,12 +101,11 @@ def profile():
         return jsonify({"message": "User not found"}), 404
 
 @app.route('/logout', methods=['POST'])
-@jwt_required()  # Proteger la ruta con JWT
+@jwt_required()
 def logout():
-    # Eliminar las cookies JWT del cliente (opcional si estás utilizando cookies)
-    resp = jsonify({'logout': True})
-    unset_jwt_cookies(resp)
-    return resp, 200
+    response = jsonify({"logout": True})
+    unset_jwt_cookies(response)  # Elimina las cookies JWT
+    return response, 200
 
 @app.route('/info', methods=['GET'])
 def get_info():
