@@ -10,11 +10,10 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(): boolean {
-    if (this.authService.currentUserValue) {
-      // El usuario está autenticado, permitir el acceso
+    const currentUser = this.authService.currentUserValue;
+    if (currentUser && currentUser.token) {
       return true;
     } else {
-      // El usuario no está autenticado, redirigir a la página de inicio de sesión
       this.router.navigate(['/inicio-sesion']);
       return false;
     }

@@ -18,7 +18,7 @@ bcrypt = Bcrypt(app)
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    #passwd="Versa123.",
+    passwd="Versa123.",
     database="versa"  # Reemplaza con el nombre de tu base de datos
 )
 
@@ -74,6 +74,31 @@ def login():
         return jsonify({"auth": True, "token": token, "role": user_role})
     else:
         return jsonify({"message": "Invalid password"}), 401
+
+# Endpoint de perfil de usuario
+@app.route('/profile', methods=['GET'])
+@jwt_required()
+def profile():
+    current_user = get_jwt_identity()
+    user_id = current_user.get('id')
+
+    cur = db.cursor()
+    query = 'SELECT username, email, rut, region, comuna FROM users WHERE id = %s'
+    cur.execute(query, (user_id,))
+    result = cur.fetchone()
+    cur.close()
+
+    if result:
+        user_profile = {
+            'username': result[0],
+            'email': result[1],
+            'rut': result[2],
+            'region': result[3],
+            'comuna': result[4]
+        }
+        return jsonify(user_profile)
+    else:
+        return jsonify({"message": "User not found"}), 404
 
 @app.route('/logout', methods=['POST'])
 @jwt_required()  # Proteger la ruta con JWT

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http'; // Importa HttpErrorResponse si no está importado
@@ -8,16 +8,33 @@ import { HttpErrorResponse } from '@angular/common/http'; // Importa HttpErrorRe
   templateUrl: './ajustes.page.html',
   styleUrls: ['./ajustes.page.scss'],
 })
-export class AjustesPage {
+export class AjustesPage implements OnInit {
+  userProfile: any = {};
 
   constructor(private authService: AuthService, private router: Router) { }
+
+  ngOnInit() {
+    this.loadUserProfile();
+  }
+
+  loadUserProfile() {
+    this.authService.getProfile().subscribe(
+      (data: any) => {
+        this.userProfile = data;
+      },
+      (error: HttpErrorResponse) => {
+        console.error('Error al cargar el perfil del usuario', error);
+        // Manejar el error aquí
+      }
+    );
+  }
 
   logout() {
     this.authService.logout().subscribe(
       () => {
         console.log('Sesión cerrada correctamente');
         // Redirige a la página de inicio de sesión u otra página según tu flujo de la aplicación
-        this.router.navigate(['/home']);
+        this.router.navigate(['/inicio-sesion']);
       },
       (error: HttpErrorResponse) => { // Especifica HttpErrorResponse para manejar errores de HTTP
         console.error('Error al intentar cerrar sesión', error);
@@ -34,5 +51,4 @@ export class AjustesPage {
       }
     );
   }
-
 }
