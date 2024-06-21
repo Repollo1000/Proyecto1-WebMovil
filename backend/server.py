@@ -20,6 +20,7 @@ db = mysql.connector.connect(
     user="root",
     passwd="Versa123.",
     database="versa"  # Reemplaza con el nombre de tu base de datos
+    #Versa123.
 )
 
 @app.route('/')

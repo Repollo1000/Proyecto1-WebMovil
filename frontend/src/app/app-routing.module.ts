@@ -16,7 +16,24 @@ const routes: Routes = [
   { path: 'chat-deportivo', loadChildren: () => import('./paginas/chat-deportivo/chat-deportivo.module').then(m => m.ChatDeportivoPageModule), canActivate: [AuthGuard] },
   { path: 'chat-preguntas', loadChildren: () => import('./paginas/chat-preguntas/chat-preguntas.module').then(m => m.ChatPreguntasPageModule), canActivate: [AuthGuard] },
   { path: 'admin-dashboard', loadChildren: () => import('./paginas/admin-dashboard/admin-dashboard.module').then(m => m.AdminDashboardPageModule), canActivate: [AuthGuard] },
-  { path: '**', redirectTo: 'home' } // Manejo de rutas desconocidas
+   
+  
+  {
+    path: 'asesoramiento-emocional',
+    loadChildren: () => import('./paginas/asesoramiento-emocional/asesoramiento-emocional.module').then( m => m.AsesoramientoEmocionalPageModule),canActivate: [AuthGuard]
+  },
+  {
+    path: 'tutor-matematica',
+    loadChildren: () => import('./paginas/tutor-matematica/tutor-matematica.module').then( m => m.TutorMatematicaPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'resolver',
+    loadChildren: () => import('./paginas/resolver/resolver.module').then( m => m.ResolverPageModule),
+    canActivate: [AuthGuard]
+  },
+  { path: '**', redirectTo: 'home' } 
+// Manejo de rutas desconocidas
 ];
 
 @NgModule({
