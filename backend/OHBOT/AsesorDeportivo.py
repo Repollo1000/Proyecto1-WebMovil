@@ -8,7 +8,7 @@ import json
 from datetime import datetime
 
 # Tu clave de API de OpenAI
-OPENAI_API_KEY = 'proporciona tu clave de API de OpenAI'
+OPENAI_API_KEY = ''
 
 # Lista de posibles movimientos aleatorios de Ohbot
 MOVIMIENTOS_OHBOT = [
@@ -100,6 +100,30 @@ def responder_con_voz(respuesta):
 
 def conversar_con_voz():
     conversation = []
+    ohbot.say("Buenos Dias")
+    ohbot.wait(0.5)
+    ohbot.move(ohbot.HEADTURN, 8)
+    ohbot.wait(0.5)
+    ohbot.move(ohbot.HEADTURN, 4)
+    ohbot.wait(0.5)
+    ohbot.move(ohbot.HEADNOD, 1)
+    ohbot.wait(0.5)
+    ohbot.move(ohbot.HEADNOD, 9)
+    ohbot.wait(0.5)
+    ohbot.move(ohbot.HEADNOD, 9)
+    ohbot.wait(0.5)
+    ohbot.move(ohbot.EYETILT, 10)
+    ohbot.wait(0.5)
+    ohbot.move(ohbot.EYETILT, 1)
+    ohbot.wait(0.5)
+    ohbot.move(ohbot.EYETILT, 5)
+    ohbot.wait(0.5)
+    ohbot.move(ohbot.EYETURN, 10)
+    ohbot.wait(0.5)
+    ohbot.move(ohbot.EYETURN, 1)
+    ohbot.wait(0.5)
+    ohbot.move(ohbot.EYETURN, 5)
+    ohbot.say("Soy Versa tu asistente Deportivo en que te puedo ayudar")
     while True:
         user_input = reconocer_voz()
         if user_input is not None:
@@ -108,7 +132,7 @@ def conversar_con_voz():
                 ohbot.say("Hasta luego!")  # Ohbot se despide
                 guardar_conversacion(conversation)
                 ohbot.close()
-                exit()  # Salir del programa
+                break  # Salir del programa
             else:
                 response = obtener_respuesta(user_input)
                 responder_con_voz(response)
@@ -116,8 +140,12 @@ def conversar_con_voz():
         else:
             print("No se detectó ninguna entrada de voz.")
 
-# Configurar Ohbot
-ohbot.init()
+def main():
+    # Configurar Ohbot
+    ohbot.init()
 
-# Ejemplo de uso
-conversar_con_voz()
+    # Ejemplo de uso
+    conversar_con_voz()
+
+if __name__ == "__main__":
+    main()

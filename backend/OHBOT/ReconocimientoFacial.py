@@ -1,9 +1,6 @@
 import cv2
 from ohbot import ohbot
 
-# Inicializar Ohbot
-ohbot.init()
-
 def realizar_movimientos_iniciales():
     # Movimientos iniciales de Ohbot antes de la detección facial
     ohbot.move(ohbot.HEADTURN, 1)
@@ -18,7 +15,7 @@ def realizar_movimientos_iniciales():
     ohbot.wait(2)
     ohbot.move(ohbot.HEADNOD, 9)
 
-def reconocimiento_facil():
+def reconocimiento_facial():
     # Inicializar el clasificador frontal de Haar para detección de rostros
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
@@ -49,7 +46,24 @@ def reconocimiento_facil():
             if not rostro_detectado:
                 print("Rostro detectado en las coordenadas (x={}, y={})".format(x, y))
                 ohbot.say("¡Hola! Veo que hay alguien aquí.")
+                
+                ohbot.wait(1)
+                ohbot.move(ohbot.HEADTURN, 8)
+                ohbot.wait(1)
+                ohbot.move(ohbot.HEADTURN, 6)
+                ohbot.wait(1)
+                ohbot.move(ohbot.HEADNOD, 1)
+                ohbot.wait(2)
+                ohbot.move(ohbot.HEADNOD, 5)
+                ohbot.move(ohbot.HEADTURN, 1)
+                ohbot.say("Te encontre adios.")
+
                 rostro_detectado = True
+                break
+
+        # Si se ha detectado un rostro, salir del bucle
+        if rostro_detectado:
+            break
 
         # Mostrar el fotograma con los rostros detectados
         cv2.imshow('Reconocimiento Facial', frame)
@@ -65,8 +79,15 @@ def reconocimiento_facil():
     # Finalizar Ohbot
     ohbot.close()
 
-# Realizar movimientos iniciales de Ohbot antes de iniciar la detección facial
-realizar_movimientos_iniciales()
+def main():
+    # Inicializar Ohbot
+    ohbot.init()
 
-# Llamar a la función para iniciar el reconocimiento facial
-reconocimiento_facil()
+    # Realizar movimientos iniciales de Ohbot antes de iniciar la detección facial
+    realizar_movimientos_iniciales()
+
+    # Llamar a la función para iniciar el reconocimiento facial
+    reconocimiento_facial()
+
+if __name__ == "__main__":
+    main()

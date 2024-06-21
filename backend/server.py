@@ -125,7 +125,7 @@ estado_script = "NADA"  # Estado inicial
 def cambiar_estado():
     global estado_script
     nuevo_estado = request.json.get('estado')
-    if nuevo_estado in ["prueba_script", "prueba_script2","NADA"]:
+    if nuevo_estado in ["AsesorDeportivo", "AsesorEmocional","NADA","TutorMatematica","cantar","ReconocimientoFacial"]:
         estado_script = nuevo_estado
         return jsonify({"message": f"Estado cambiado a {estado_script}"}), 200
     else:
