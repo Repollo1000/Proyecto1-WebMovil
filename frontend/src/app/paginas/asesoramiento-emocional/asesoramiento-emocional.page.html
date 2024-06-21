@@ -20,8 +20,8 @@
     </p>
 
     <div class="button-container">
-      <ion-button [routerLink]="['/chat-preguntas']" class="btn">Iniciar conversacion</ion-button>
-      <ion-button [routerLink]="['/dashboard']" class="btn">Volver</ion-button>
+      <ion-button [routerLink]="['/chat-preguntas']" (click)="cambiarEstado('AsesorEmocional')" class="btn">Iniciar conversacion</ion-button>
+      <ion-button [routerLink]="['/dashboard']"(click)="cambiarEstado('NADA')"  class="btn">Volver</ion-button>
     </div>
 
   </div>
