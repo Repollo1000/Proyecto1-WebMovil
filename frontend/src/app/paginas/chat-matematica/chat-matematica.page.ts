@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-chat-deportivo',
-  templateUrl: './chat-deportivo.page.html',
-  styleUrls: ['./chat-deportivo.page.scss'],
+  selector: 'app-chat-matematica',
+  templateUrl: './chat-matematica.page.html',
+  styleUrls: ['./chat-matematica.page.scss'],
 })
-export class ChatDeportivoPage implements OnInit {
+export class ChatMatematicaPage implements OnInit {
+
   conversacion: any[] = [];
 
   constructor(private http: HttpClient) {}
@@ -23,4 +24,5 @@ export class ChatDeportivoPage implements OnInit {
         console.error('Error al obtener la conversación:', error);
       });
   }
+
 }

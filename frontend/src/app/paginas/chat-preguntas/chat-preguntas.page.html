@@ -1,30 +1,35 @@
-<ion-header [translucent]="true">
-
-</ion-header>
+<ion-header [translucent]="true"></ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-
-  </ion-header>
+  <ion-header collapse="condense"></ion-header>
 
   <div id="encabezado">
-    <p id="asis" >Chat preguntas</p>
-    <img id="fotoOhbot" src="assets\imagenes\ohbot.png" alt="Descripción de la imagen">
-  </div> 
+    <p id="asis">Chat<br>Preguntas</p>
+    <img id="fotoOhbot" src="assets/imagenes/ohbot.png" alt="Descripción de la imagen">
+  </div>
 
   <div id="container">
-
     <div id="titulochat">
       <h1 id="chat1">Chat 1</h1>
     </div>
-    <div id="pantallachat">
-    </div>
+
+    
+    <ion-list id="pantallachat">
+      <ion-item *ngFor="let mensaje of conversacion" lines="none">
+        <div *ngIf="mensaje.user" class="mensaje usuario">
+          <strong>Usuario:</strong> {{ mensaje.user }}
+        </div>
+        <div *ngIf="mensaje.assistant" class="mensaje asistente">
+          <strong>Asistente:</strong> {{ mensaje.assistant }}
+        </div>
+      </ion-item>
+    </ion-list>
+    
+
     <div class="button-container">
-      <ion-button [routerLink]="['/dashboard']" (click)="cambiarEstado('NADA')" class="btn">Volver</ion-button>
+      <ion-button [routerLink]="['/asesoramiento-emocional']" class="btn">Volver</ion-button>
     </div>
-
   </div>
-
 </ion-content>
 
 <app-footer></app-footer>

@@ -8,7 +8,7 @@ def obtener_estado_servidor():
     try:
         response = requests.get("http://127.0.0.1:3000/obtener_estado")
         if response.status_code == 200:
-            return response.json().get("estado")
+            return response.json()
         else:
             print("Error al obtener el estado del servidor:", response.status_code)
             return None
@@ -39,8 +39,16 @@ def ciclo_principal():
         if estado_actual and estado_actual != estado_anterior:
             estado_anterior = estado_actual
             ejecutar_script(estado_actual)
+            imprimir_json(estado_actual)
 
         time.sleep(5)  # Espera 5 segundos antes de verificar el estado nuevamente
+
+def imprimir_json(json_data):
+    if json_data:
+        print("JSON obtenido del servidor:")
+        print(json_data)
+    else:
+        print("No se pudo obtener el JSON del servidor.")
 
 if __name__ == "__main__":
     ciclo_principal()

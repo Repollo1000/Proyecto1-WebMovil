@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { EstadoService } from '../../services/estado.service';
 import { ToastController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-chat-preguntas',
   templateUrl: './chat-preguntas.page.html',
   styleUrls: ['./chat-preguntas.page.scss'],
 })
 export class ChatPreguntasPage implements OnInit {
+ 
+  conversacion: any;
 
-  constructor(private estadoService: EstadoService, private toastController: ToastController) {}
+  constructor(private estadoService: EstadoService, private toastController: ToastController,private http: HttpClient) {}
 
   async cambiarEstado(estado: string) {
     try {
@@ -32,6 +36,15 @@ export class ChatPreguntasPage implements OnInit {
 
 
   ngOnInit() {
+    this.obtenerConversacion();
   }
 
+  obtenerConversacion() {
+    this.http.get<any>('http://localhost:3000/obtener_chat_deportivo')
+      .subscribe(data => {
+        this.conversacion = data.conversacion;
+      }, error => {
+        console.error('Error al obtener la conversación:', error);
+      });
+  }
 }

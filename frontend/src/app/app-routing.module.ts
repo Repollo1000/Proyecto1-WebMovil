@@ -32,7 +32,23 @@ const routes: Routes = [
     loadChildren: () => import('./paginas/resolver/resolver.module').then( m => m.ResolverPageModule),
     canActivate: [AuthGuard]
   },
-  { path: '**', redirectTo: 'home' } 
+  {
+    path: 'chat-matematica',
+    loadChildren: () => import('./paginas/chat-matematica/chat-matematica.module').then( m => m.ChatMatematicaPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'pagecanto',
+    loadChildren: () => import('./paginas/pagecanto/pagecanto.module').then( m => m.PagecantoPageModule),
+    canActivate: [AuthGuard]
+  }, {
+    path: 'camara',
+    loadChildren: () => import('./paginas/camara/camara.module').then( m => m.CamaraPageModule),
+    canActivate: [AuthGuard]
+  },
+ 
+  { path: '**', redirectTo: 'home' },  
+
 // Manejo de rutas desconocidas
 ];
 

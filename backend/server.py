@@ -1,8 +1,9 @@
-from flask import Flask, request, jsonify
+from flask import Flask, json, request, jsonify
 import mysql.connector
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity, unset_jwt_cookies
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app)  # Habilitar CORS
@@ -18,7 +19,7 @@ bcrypt = Bcrypt(app)
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    passwd="Versa123.",
+    passwd="",
     database="versa"  # Reemplaza con el nombre de tu base de datos
     #Versa123.
 )
@@ -111,7 +112,7 @@ def logout():
 @app.route('/info', methods=['GET'])
 def get_info():
     try:
-        with open('info.json', 'r') as file:
+        with open('info.json', 'r', encoding='utf-8') as file:
             data = json.load(file)
         return jsonify(data)
     except Exception as e:
@@ -130,6 +131,43 @@ def cambiar_estado():
         return jsonify({"message": f"Estado cambiado a {estado_script}"}), 200
     else:
         return jsonify({"error": "Estado no válido"}), 400
+
+
+file_path = os.path.join(os.path.dirname(__file__), 'conversacion_deportiva.json')
+
+@app.route('/obtener_chat_deportivo', methods=['GET'])
+def obtener_chat_deportivo():
+    global estado_script
+
+    try:
+        if estado_script == 'AsesorDeportivo':
+            file_path = os.path.join(os.path.dirname(__file__), 'OHBOT', 'conversacion_deportiva.json')
+        elif estado_script == 'AsesorEmocional':
+            file_path = os.path.join(os.path.dirname(__file__), 'OHBOT', 'conversacion_emocional.json')
+        elif estado_script == 'TutorMatematica':
+            file_path = os.path.join(os.path.dirname(__file__), 'OHBOT', 'conversacion_matematicas.json')
+        else:
+            file_path = os.path.join(os.path.dirname(__file__), 'conversacion_deportiva.json')
+
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"El archivo {file_path} no existe.")
+
+        with open(file_path, 'r', encoding='utf-8') as file:
+            chat_deportivo = json.load(file)
+
+        return jsonify(chat_deportivo), 200
+
+    except FileNotFoundError as fnf_error:
+        print(f"Error al leer el archivo JSON: {str(fnf_error)}")
+        return jsonify({"message": f"Error al leer el archivo JSON: {str(fnf_error)}"}), 404
+
+    except Exception as e:
+        print(f"Error al leer el archivo JSON: {str(e)}")
+        return jsonify({"message": f"Error al leer el archivo JSON: {str(e)}"}), 500
+
+
+
+
 
 # Ruta para obtener el estado actual del script
 @app.route('/obtener_estado', methods=['GET'])

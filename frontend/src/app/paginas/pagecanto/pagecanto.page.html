@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+
+  </ion-header>
+
+  <div>
+    <img src="assets\imagenes\ohbot.png" alt="imagen de OHBOT">
+
+  </div>
+
+  <div id="container">
+    <h1>Versa cantante </h1>
+
+    <p>
+      ¡Hola! Soy versa y te voy a cantar un poco para animar tu día, ¡Disfruta mi linda voz!
+    </p>
+    <div class="button-container">
+
+      <ion-button [routerLink]="['/dashboard']" (click)="cambiarEstado('NADA')" class="btn">Volver</ion-button>
+    </div>
+
+    
+  </div>
+
+
+
+</ion-content>

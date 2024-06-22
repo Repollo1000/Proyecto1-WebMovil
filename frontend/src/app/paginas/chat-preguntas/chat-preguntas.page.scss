@@ -6,87 +6,85 @@ ion-content {
     display: flex;               
     justify-content: center;     
     align-items: center;        
-    width: auto;
-    margin-left: 35px;
-    margin-right: 35px;
+    margin: 10px 35px;
     border-radius: 32px 32px 20px 20px;
-    margin-top: 10px;
     background-color: rgb(243, 169, 225);
 }  
+
 #fotoOhbot {
-    display: flex;
     margin-right: 30px; 
     width: 30%;
-
 }
 
 #asis {
-    
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 36px;
     color: #000000;
-
     transform: rotate(-0.37deg);
-
-
-    text-align: center;
+    text-align: left;
     margin-right: 20%;
     padding: 10px 10px;
-    
 }
 
 #container {
-    margin-top: 20px;
+    margin: 20px 25px 75px;
     background-color: rgba(255, 255, 255, 0.692);
-    margin-left: 25px;
-    margin-right: 25px;
     height: 70%;
-    margin-bottom: 75px;
-    padding: 20px;   /* Espacio interno */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra para un mejor efecto visual */
-    border-radius: 20px; /* Esquinas redondeadas opcional */
-
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
 }
-#chat1 {
-    width: 50px;    
-    height: 5px;   
-    top: -10px;
-    position: absolute;        
-    left: 55%;       
-    transform: translate(-50%, -50%); /* Ajuste de la posición horizontal y vertical */
-    border-radius: 5px; 
-    font-size: 15px;  
-    white-space: nowrap;
 
+#chat1 {
+    font-size: 15px;
+    white-space: nowrap;
 }
 
 #titulochat {
-    margin-bottom: 20px;
-    top:-15px;
+    margin: 20px auto 20px;
     background-color: white;
-    width: 70px;    
-    height: 30px;    
-    position: relative; /* Posicionamiento relativo para contener a #chat1 */
-    margin: 20px auto; /* Centrado horizontal */
-    padding: 0px;   /* Espacio interno */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un mejor efecto visual */
-    border-radius: 10px; 
+    width: 70px;
+    height: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#pantallachat{
-    margin-top: 20px;
-    width: 100%;    
-    height: 70%;  
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 35px;  
-    background-color: rgb(254, 237, 254);
 
+#pantallachat {
+    width: 100%;
+    height: 78%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 35px;
+    background-color: rgb(254, 237, 254);
+    overflow-y: scroll;
+    padding-top: 5px;
 }
+
+.mensaje {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 100%;
+    word-wrap: break-word;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.usuario {
+    background-color: #d1e7dd;
+    align-self: flex-end;
+}
+
+.asistente {
+    background-color: #f8d7da;
+    align-self: flex-start;
+}
+
 .button-container {
     display: flex;
     flex-direction: column;
@@ -96,12 +94,17 @@ ion-content {
     filter: drop-shadow(0px 1px 75.2px #A259FF);
 }
 
-ion-button{
-    
-
-    --background:#C3C7F3;
+ion-button {
+    --background: #C3C7F3;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     margin-bottom: 25px;
+}
 
+ion-item {
+    --background: rgb(254, 237, 254);
+}
+
+ion-list {
+    --background: rgb(254, 237, 254);
 }
