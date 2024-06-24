@@ -45,9 +45,14 @@ const routes: Routes = [
     path: 'camara',
     loadChildren: () => import('./paginas/camara/camara.module').then( m => m.CamaraPageModule),
     canActivate: [AuthGuard]
+  },{
+    path: 'activar-robot',
+    loadChildren: () => import('./paginas/activar-robot/activar-robot.module').then( m => m.ActivarRobotPageModule),
+    canActivate: [AuthGuard]
   },
  
-  { path: '**', redirectTo: 'home' },  
+ 
+  { path: '**', redirectTo: 'home' },   
 
 // Manejo de rutas desconocidas
 ];

@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+
+  </ion-header>
+
+  <div>
+    <img src="assets\imagenes\ohbot.png" alt="imagen de OHBOT">
+
+  </div>
+
+  <div id="container">
+    <h1>Activando<br> Robot</h1>
+
+    <p>
+      ¡Hola! Soy Ohbot. Estamos ajustando los parámetros necesarios para establecer una conexión estable y ofrecer un servicio de calidad.</p>
+
+    <div class="conexion">
+      <img src="assets\imagenes\ohbot.png" alt="">
+
+      <p>Se esta estableciendo la conexion con ohbot espere un momento...</p>
+    </div>
+
+    <div class="button-container">
+      
+      <ion-button [routerLink]="['/dashboard']"(click)="cambiarEstado('NADA')" class="btn">Volver</ion-button>
+    </div>
+
+  </div>
+
+
+</ion-content>
+  

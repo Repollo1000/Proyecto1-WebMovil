@@ -1,0 +1,62 @@
+ion-content {
+    --background: linear-gradient(180deg, rgba(225, 195, 255, 0.926) 0%, rgba(243, 220, 220, 0.84) 100%);
+
+    text-align: center;
+  }
+
+img{
+    width: 50%;
+    max-width: 300px; /* Ajusta este valor según sea necesario */
+    height: auto;
+    margin-top: 20px;
+}
+#container{
+
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    background: #F5F5F5;
+    border-radius: 32px 32px 20px 20px;
+
+}
+h1{
+    filter: drop-shadow(0px 1px 75.2px #A259FF);
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    filter: drop-shadow(0px 1px 75.2px #A259FF);
+}
+
+ion-button{
+    
+
+    --background:#C3C7F3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    margin-bottom: 25px;
+
+}
+
+.conexion {
+    background-color: #F3DCDC;
+    border-radius: 60px;
+    margin: 50px;
+    padding: 20px; /* Agrega algo de padding para que el contenido no toque los bordes */
+    display: flex;
+    align-items: center;
+  }
+
+  .conexion img {
+    width: 59px;
+    height: 55px;
+    border-radius: 90px;
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+    /* Elimina position: absolute */
+  }
+  .conexion p {
+    margin: 0; /* Elimina el margen por defecto del párrafo */
+  }
