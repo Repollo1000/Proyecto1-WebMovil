@@ -119,7 +119,7 @@ def get_info():
         return jsonify({"message": "Error reading info.json"}), 500
 
 # Estado inicial del script
-estado_script = ""  # Estado inicial
+estado_script = "Sin Actividad Reciente"  # Estado inicial
 
 # Ruta para cambiar el estado del script
 @app.route('/cambiar_estado', methods=['POST'])
@@ -127,7 +127,7 @@ def cambiar_estado():
     global estado_script
     estado_script = request.json.get('estado')
     nuevo_estado = estado_script
-    if nuevo_estado in ["AsesorDeportivo","AsesorDeportivo-chat", "AsesorEmocional","AsesorEmocional-chat","NADA","","TutorMatematica","TutorMatematica-chat","cantar","ReconocimientoFacial"]:
+    if nuevo_estado in ["AsesorDeportivo","AsesorDeportivo-chat","Sin Actividad Reciente","AsesorEmocional","AsesorEmocional-chat","NADA","","TutorMatematica","TutorMatematica-chat","cantar","ReconocimientoFacial"]:
         estado_script = nuevo_estado
         if(estado_script!= ""):
             return jsonify({"message": f"{estado_script}"}), 200
