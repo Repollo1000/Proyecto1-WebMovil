@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EstadoService } from '../../services/estado.service'; // Asegúrate de que esta ruta es correcta
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-pagecanto',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pagecanto.page.scss'],
 })
 export class PagecantoPage implements OnInit {
-  estadoService: any;
-  toastController: any;
 
-  constructor() { }
+  constructor(
+    private estadoService: EstadoService,
+    private toastController: ToastController
+  ) {}
+
   async cambiarEstado(estado: string) {
     try {
       const response = await this.estadoService.cambiarEstado(estado).toPromise();
@@ -29,9 +33,6 @@ export class PagecantoPage implements OnInit {
     });
     toast.present();
   }
-
-  
-  
 
   ngOnInit() {
   }

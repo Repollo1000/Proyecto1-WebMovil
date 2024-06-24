@@ -35,11 +35,18 @@ def ciclo_principal():
     estado_anterior = None
     while True:
         estado_actual = obtener_estado_servidor()
+
+        # Extraemos la clave y el valor
+        clave = list(estado_actual.keys())[0]
+        valor = estado_actual[clave]
+        estado_actual = valor
+
         print("Estado actual:", estado_actual)
-        if estado_actual and estado_actual != estado_anterior:
-            estado_anterior = estado_actual
-            ejecutar_script(estado_actual)
-            imprimir_json(estado_actual)
+        if(estado_actual != 'AsesorDeportivo-chat'or estado_actual != 'AsesorEmocional-chat' or estado_actual !='TutorMatematica-chat'):
+            if estado_actual and estado_actual != estado_anterior:
+                estado_anterior = estado_actual
+                ejecutar_script(estado_actual)
+                imprimir_json(estado_actual)
 
         time.sleep(5)  # Espera 5 segundos antes de verificar el estado nuevamente
 

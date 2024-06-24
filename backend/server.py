@@ -19,7 +19,7 @@ bcrypt = Bcrypt(app)
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    passwd="",
+    passwd="Versa123.",
     database="versa"  # Reemplaza con el nombre de tu base de datos
     #Versa123.
 )
@@ -119,16 +119,21 @@ def get_info():
         return jsonify({"message": "Error reading info.json"}), 500
 
 # Estado inicial del script
-estado_script = "NADA"  # Estado inicial
+estado_script = ""  # Estado inicial
 
 # Ruta para cambiar el estado del script
 @app.route('/cambiar_estado', methods=['POST'])
 def cambiar_estado():
     global estado_script
-    nuevo_estado = request.json.get('estado')
-    if nuevo_estado in ["AsesorDeportivo", "AsesorEmocional","NADA","TutorMatematica","cantar","ReconocimientoFacial"]:
+    estado_script = request.json.get('estado')
+    nuevo_estado = estado_script
+    if nuevo_estado in ["AsesorDeportivo","AsesorDeportivo-chat", "AsesorEmocional","AsesorEmocional-chat","NADA","","TutorMatematica","TutorMatematica-chat","cantar","ReconocimientoFacial"]:
         estado_script = nuevo_estado
-        return jsonify({"message": f"Estado cambiado a {estado_script}"}), 200
+        if(estado_script!= ""):
+            return jsonify({"message": f"{estado_script}"}), 200
+        else:
+            estado_script = "uso de ohbot"
+            return jsonify({"message": f"HOME"}), 200
     else:
         return jsonify({"error": "Estado no válido"}), 400
 
@@ -140,11 +145,11 @@ def obtener_chat_deportivo():
     global estado_script
 
     try:
-        if estado_script == 'AsesorDeportivo':
+        if estado_script == 'AsesorDeportivo-chat':
             file_path = os.path.join(os.path.dirname(__file__), 'OHBOT', 'conversacion_deportiva.json')
-        elif estado_script == 'AsesorEmocional':
+        elif estado_script == 'AsesorEmocional-chat':
             file_path = os.path.join(os.path.dirname(__file__), 'OHBOT', 'conversacion_emocional.json')
-        elif estado_script == 'TutorMatematica':
+        elif estado_script == 'TutorMatematica-chat':
             file_path = os.path.join(os.path.dirname(__file__), 'OHBOT', 'conversacion_matematicas.json')
         else:
             file_path = os.path.join(os.path.dirname(__file__), 'conversacion_deportiva.json')
@@ -174,6 +179,7 @@ def obtener_chat_deportivo():
 def obtener_estado():
     global estado_script
     return jsonify({"estado": estado_script}), 200
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=3000)

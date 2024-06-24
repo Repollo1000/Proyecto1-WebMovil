@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { EstadoService } from '../../services/estado.service';
+import { ToastController } from '@ionic/angular';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-camara',
@@ -6,13 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./camara.page.scss'],
 })
 export class CamaraPage implements OnInit {
-  estadoService: any;
-  toastController: any;
 
-  constructor() { }
+  constructor(
+    private estadoService: EstadoService,
+    private toastController: ToastController
+  ) {}
+
   async cambiarEstado(estado: string) {
     try {
-      const response = await this.estadoService.cambiarEstado(estado).toPromise();
+      const response = await firstValueFrom(this.estadoService.cambiarEstado(estado));
       if (response && response.message) {
         this.presentToast(response.message);
       }
@@ -29,9 +34,6 @@ export class CamaraPage implements OnInit {
     });
     toast.present();
   }
-
-  
-  
 
   ngOnInit() {
   }
