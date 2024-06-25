@@ -1,9 +1,13 @@
 {
-    "fecha": "2024-06-24 13:44:54",
+    "fecha": "2024-06-21 12:55:39",
     "conversacion": [
         {
-            "user": "rutina de gym",
-            "assistant": "Por favor, proporciona tu clave de API de OpenAI."
+            "user": "hazme una rutina de alguien",
+            "assistant": "Lo siento, necesito m\u00e1s informaci\u00f3n para crear una rutina adecuada. \u00bfPodr\u00edas especificar qu\u00e9 tipo de rutina est\u00e1s buscando? \u00bfUna rutina de ejercicio f\u00edsico, una dieta o una combinaci\u00f3n de ambas? Tambi\u00e9n necesitar\u00eda saber las caracter\u00edsticas f\u00edsicas de la persona, como su edad, altura, peso, nivel de actividad, objetivos personales, etc. para hacer una recomendaci\u00f3n personalizada y efectiva."
+        },
+        {
+            "user": "hazme una rutina de brazos",
+            "assistant": "\u00a1Por supuesto! Aqu\u00ed te dejo una rutina de brazos que puedes hacer en casa:\n\n1. Flexiones de brazos: haz 3 series de 10 repeticiones para calentar tus brazos.\n2. Curl de b\u00edceps con mancuernas: haz 3 series de 12 repeticiones con cada brazo.\n3. Extensi\u00f3n de tr\u00edceps con mancuernas: haz 3 series de 12 repeticiones con cada brazo.\n4. Press de banca con mancuernas: haz 3 series de 12 repeticiones.\n\nRecuerda mantener una postura adecuada y utilizar peso adecuado para evitar lesiones. Tambi\u00e9n es importante descansar entre series y beber suficiente agua durante el ejercicio. \u00a1Disfruta de tu rutina!"
         }
     ]
 }
