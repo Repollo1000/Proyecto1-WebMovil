@@ -92,6 +92,7 @@ def responder_con_voz(respuesta):
     # Crear un hilo para los movimientos naturales mientras Ohbot habla
     movimiento_thread = threading.Thread(target=mover_natural)
     movimiento_thread.start()
+    ohbot.wait(0.5)
 
     ohbot.say(respuesta)  # Ohbot dice la respuesta
 
