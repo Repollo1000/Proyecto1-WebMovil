@@ -85,7 +85,7 @@ def profile():
     user_id = current_user.get('id')
 
     cur = db.cursor()
-    query = 'SELECT username, email, rut, region, comuna FROM users WHERE id = %s'
+    query = 'SELECT username, email, rut, region, comuna, role FROM users WHERE id = %s'
     cur.execute(query, (user_id,))
     result = cur.fetchone()
     cur.close()
@@ -96,7 +96,8 @@ def profile():
             'email': result[1],
             'rut': result[2],
             'region': result[3],
-            'comuna': result[4]
+            'comuna': result[4],
+            'role': result[5]
         }
         return jsonify(user_profile)
     else:
@@ -171,7 +172,58 @@ def obtener_chat_deportivo():
         return jsonify({"message": f"Error al leer el archivo JSON: {str(e)}"}), 500
 
 
+# Endpoint para verificar el rol del usuario
+@app.route('/verificar_rol', methods=['GET'])
+@jwt_required()
+def verificar_rol():
+    current_user = get_jwt_identity()
+    user_id = current_user.get('id')
 
+    cur = db.cursor()
+    query = 'SELECT role FROM users WHERE id = %s'
+    cur.execute(query, (user_id,))
+    result = cur.fetchone()
+    cur.close()
+
+    if result:
+        user_role = result[0]
+        return jsonify({"role": user_role})
+    else:
+        return jsonify({"message": "User not found"}), 404
+
+
+@app.route('/user-count', methods=['GET'])
+@jwt_required()
+def get_user_count():
+    current_user = get_jwt_identity()
+    if current_user['role'] != 'admin':
+        return jsonify({"message": "Access forbidden"}), 403
+
+    cur = db.cursor()
+    query = 'SELECT COUNT(*) FROM users'
+    cur.execute(query)
+    result = cur.fetchone()
+    cur.close()
+
+    if result:
+        return jsonify({"user_count": result[0]})
+    else:
+        return jsonify({"message": "Error fetching user count"}), 500
+
+
+# Endpoint para obtener el último usuario registrado
+@app.route('/last-user', methods=['GET'])
+@jwt_required()
+def last_user():
+    cur = db.cursor()
+    query = 'SELECT username FROM users ORDER BY id DESC LIMIT 1'
+    cur.execute(query)
+    result = cur.fetchone()
+    cur.close()
+    if result:
+        return jsonify({"last_user": result[0]})
+    else:
+        return jsonify({"last_user": None}), 404
 
 
 # Ruta para obtener el estado actual del script

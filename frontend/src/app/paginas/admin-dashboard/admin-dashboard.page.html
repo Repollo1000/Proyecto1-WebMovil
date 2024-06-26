@@ -11,23 +11,19 @@
     <div class="service-box">
       <div class="service-item">
         <p>Usuarios</p>
-        <h3>10</h3>
+        <h3>{{ userCount }}</h3>
       </div>
       <div class="service-item">
         <p>Último usuario</p>
-        <h3>Sebastian Rojas</h3>
-      </div>
-    </div>
-    <div class="service-box">
-      <div class="service-item full-width">
-        <p>Última actividad</p>
-        <h3>Asesor deportivo</h3>
+        <h3>{{ lastUser }}</h3>
       </div>
     </div>
     <div class="service-box">
       <div class="service-item full-width">
         <p>Uso Ohbot</p>
+        <h3>{{ currentState }}</h3>
       </div>
     </div>
+    <ion-button (click)="logout()" expand="block" color="danger" class="custom-button">Cerrar Sesión</ion-button>
   </div>
 </ion-content>

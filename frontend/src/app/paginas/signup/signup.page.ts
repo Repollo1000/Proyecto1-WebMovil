@@ -84,8 +84,21 @@ export class SignupPage implements OnInit {
 
     this.authService.register(newUser).subscribe(
       response => {
-        // Redirigir al dashboard después de un registro exitoso
-        this.router.navigate(['/dashboard']);  // Asegúrate de que la ruta sea correcta
+        // Iniciar sesión automáticamente después del registro
+        this.authService.login(this.email, this.password).subscribe(
+          loginResponse => {
+            // Redirigir al dashboard después de un inicio de sesión exitoso
+            const role = loginResponse.role;
+            if (role === 'admin') {
+              this.router.navigate(['/admin-dashboard']);
+            } else {
+              this.router.navigate(['/dashboard']);
+            }
+          },
+          async loginError => {
+            await this.showAlert('Error', 'Registro exitoso, pero error al iniciar sesión automáticamente.');
+          }
+        );
       },
       async error => {
         await this.showAlert('Error', error.error.message || 'Ocurrió un error al procesar la solicitud');

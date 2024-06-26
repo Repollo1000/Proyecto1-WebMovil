@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class AuthService {
   public currentUser: Observable<any>;
   private apiUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser') || '{}'));
     this.currentUser = this.currentUserSubject.asObservable();
   }
@@ -27,6 +28,12 @@ export class AuthService {
           localStorage.setItem('currentUser', JSON.stringify(user));
           localStorage.setItem('token', user.token);
           this.currentUserSubject.next(user);
+          // Redirigir según el rol
+          if (user.role === 'admin') {
+            this.router.navigate(['/admin-dashboard']);
+          } else {
+            this.router.navigate(['/dashboard']);
+          }
         }
         return user;
       }));
@@ -45,6 +52,7 @@ export class AuthService {
           localStorage.removeItem('currentUser');
           localStorage.removeItem('token');
           this.currentUserSubject.next(null);
+          this.router.navigate(['/inicio-sesion']); // Redirigir al inicio de sesión después de cerrar sesión
           return response;
         })
       );
