@@ -58,9 +58,13 @@ CREATE TABLE users (
   password VARCHAR(255) NOT NULL,
   role VARCHAR(50) DEFAULT 'user'
 );
+
 Nombre base de datos:versa
+
 Password: Versa123.
+
 Consideraciones: La asignacion del rol "admin" se realiza manualmente en la base de datos.
+
 Estructura del Proyecto
 
 project-root/
